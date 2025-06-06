@@ -1,0 +1,73 @@
+body {
+  background-color: black;
+  font-family: "Mochiy Pop One", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  color: #fff;
+}
+
+a {
+  color: #2cceff;
+}
+.nav {
+  background-color: rgb(64, 64, 64);
+  display: flex;
+  padding: 10px;
+  justify-content: space-between;
+  position: fixed;
+  top: 0;
+  width: 97%;
+}
+
+.left {
+  display: flex;
+}
+.nav a {
+  color: #fff;
+  text-decoration: none;
+  padding: 10px;
+}
+.nav a:hover {
+  background-color: #70deff;
+}
+
+.def {
+  color: aquamarine;
+}
+
+.title {
+  background-color: rgb(92, 184, 255);
+  width: 100%;
+}
+
+.bo {
+  margin-top: 70px;
+}
+
+.imp {
+  color: rgb(201, 149, 249);
+}
+
+.body {
+  margin-top: 70px;
+  display: grid;
+  grid-template-columns: 1fr 3fr;
+}
+
+.tableocontents {
+  background-color: rgb(27, 27, 27);
+  padding: 10px;
+  margin: 10px;
+  border-radius: 2px;
+}
+
+.nodec {
+  text-decoration: none;
+  color: #fff;
+  font-size: x-large;
+}
+
+.steps {
+  color: #ff8c8c;
+  width: 100%;
+}

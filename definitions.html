@@ -1,0 +1,68 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LR2 Skin Help (English Version)</title>
+    <link rel="stylesheet" href="main.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Mochiy+Pop+One&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="nav">
+        <div class="left">
+        <nav><a href="index.html" class="">Home</a></nav>
+        <nav><a href="skinbasics.html" class="">Basics of a skin</a></nav>
+        <nav><a href="definitions.html" class="">Definitions</a></nav>
+        <nav><a href="definitionsa.html" class="">Advanced Definitions</a></nav>
+        <nav><a href="dstop.html" class="">Numbers</a></nav>
+        <nav><a href="misc.html" class="">Misc</a></nav>
+        <nav><a href="misc2.html" class="">Problemdump</a></nav>
+        </div>
+        <div class="right">
+            LR2 Skin Help (EN)
+        </div>
+    </div>
+    <div class="body">
+        <div class="tableocontents">
+            <h4>Table of Contents</h4>
+            <ul>
+<li><a href="definitions.html#basic" style="color: aqua;">Basic Definition</a></li>
+<li><a href="definitions.html#image">#IMAGE</a></li>
+            </ul>
+        </div>
+        <div class="content">
+            <div class="section0">
+            <a name="basic" class="title nodec">Basic Definitions</a><br><br>
+            <span>Basically speaking, rendering sprites in LR2 follow 3 simple steps:</span>
+            <ol class="steps">
+                <li>Starting from a #IMAGE file,</li>
+                <li>Cut out a portion(or whole) from the #SRC_XX definition,</li>
+                <li>Render the cut-out portion to the screen from the #DST_XX definition.</li>
+            </ol>
+            <span> <strong>MAKE SURE THAT</strong> the XX in #SRC_XX and #DST_XX match each other!</span>
+            <br>
+            <span>Else the game will <strong>NOT</strong> render the sprite in-game at all!</span>
+            <br>
+            <h6>Trust me, I have been there.</h6>
+            <span>The game picks up the definitions from #SRC_XX and #DST_XX, and ignores everything with a different starting syntax.</span>
+            <br>
+            <span>Even though you can technically just create a comment line using no prefix syntax at all, it's better to start those lines with <strong>// (two slashes)</strong></span>
+            </div>
+            <br><br>
+            <span>#SRC_IMAGE and #DST_IMAGE is the most commonly used definition and is also the base for the DST definitions of almost all others, so it's safe to use the arguments tfor other definition types.</span>
+            <br><br>
+            <div class="image">
+                <a name="image" class="title nodec">#IMAGE</a>
+                <br><br>
+                <span>The #IMAGE definition is used to reference an image file in the skin.</span>
+                <br>
+                <span>Up to 100 can be defined for one single .csv file (?)</span>
+                <br>
+                <span>Starting from the topmost-defined one, the <strong>gr</strong> value is assigned starting from 0 automatically.</span>
+                <span>It's common practice to comment the gr number of a file on the same line as the #IMAGE definition, for easy reference later.</span>
+            </div>
+        </div>
+    </div>
+    </body>
+    </html>
