@@ -1,16 +1,19 @@
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>LR2 Skin Help (English Version)</title>
-    <link rel="stylesheet" href="main.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Mochiy+Pop+One&display=swap" rel="stylesheet">
-</head>
-<body>
+    <link rel="stylesheet" href="main.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Mochiy+Pop+One&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
     <div class="nav">
-        <div class="left">
+      <div class="left">
         <nav><a href="index.html" class="">Home</a></nav>
         <nav><a href="skinbasics.html" class="">Basics of a skin</a></nav>
         <nav><a href="definitions.html" class="">Definitions</a></nav>
@@ -18,51 +21,567 @@
         <nav><a href="dstop.html" class="">Numbers</a></nav>
         <nav><a href="misc.html" class="">Misc</a></nav>
         <nav><a href="misc2.html" class="">Problemdump</a></nav>
-        </div>
-        <div class="right">
-            LR2 Skin Help (EN)
-        </div>
+      </div>
+      <div class="right">LR2 Skin Help (EN)</div>
     </div>
     <div class="body">
-        <div class="tableocontents">
-            <h4>Table of Contents</h4>
-            <ul>
-<li><a href="definitions.html#basic" style="color: aqua;">Basic Definition</a></li>
-<li><a href="definitions.html#image">#IMAGE</a></li>
-            </ul>
+      <div class="tableocontents">
+        <h4>Table of Contents</h4>
+        <ul>
+          <li>
+            <a href="definitions.html#basic" style="color: aqua"
+              >Basic Definition</a
+            >
+          </li>
+          <li><a href="definitions.html#image">#IMAGE</a></li>
+          <li><a href="definitions.html#src_image">#SRC_IMAGE</a></li>
+          <li><a href="definitions.html#dst_image">#DST_IMAGE</a></li>
+          <li>
+            <a href="definitions.html#gendef" style="color: aqua"
+              >Generic Definitions</a
+            >
+          </li>
+        </ul>
+      </div>
+      <div class="content">
+        <div class="section0">
+          <a name="basic" class="title nodec">Basic Definitions</a><br /><br />
+          <span
+            >Basically speaking, rendering sprites in LR2 follow 3 simple
+            steps:</span
+          >
+          <ol class="steps">
+            <li>Starting from a #IMAGE file,</li>
+            <li>Cut out a portion(or whole) from the #SRC_XX definition,</li>
+            <li>
+              Render the cut-out portion to the screen from the #DST_XX
+              definition.
+            </li>
+          </ol>
+          <span>
+            <strong>MAKE SURE THAT</strong> the XX in #SRC_XX and #DST_XX match
+            each other!</span
+          >
+          <br />
+          <span
+            >Else the game will <strong>NOT</strong> render the sprite in-game
+            at all!</span
+          >
+          <br />
+          <h6>Trust me, I have been there.</h6>
+          <span
+            >The game picks up the definitions from #SRC_XX and #DST_XX, and
+            ignores everything with a different starting syntax.</span
+          >
+          <br />
+          <span
+            >Even though you can technically just create a comment line using no
+            prefix syntax at all, it's better to start those lines with
+            <strong>// (two slashes)</strong></span
+          >
         </div>
-        <div class="content">
-            <div class="section0">
-            <a name="basic" class="title nodec">Basic Definitions</a><br><br>
-            <span>Basically speaking, rendering sprites in LR2 follow 3 simple steps:</span>
-            <ol class="steps">
-                <li>Starting from a #IMAGE file,</li>
-                <li>Cut out a portion(or whole) from the #SRC_XX definition,</li>
-                <li>Render the cut-out portion to the screen from the #DST_XX definition.</li>
-            </ol>
-            <span> <strong>MAKE SURE THAT</strong> the XX in #SRC_XX and #DST_XX match each other!</span>
-            <br>
-            <span>Else the game will <strong>NOT</strong> render the sprite in-game at all!</span>
-            <br>
-            <h6>Trust me, I have been there.</h6>
-            <span>The game picks up the definitions from #SRC_XX and #DST_XX, and ignores everything with a different starting syntax.</span>
-            <br>
-            <span>Even though you can technically just create a comment line using no prefix syntax at all, it's better to start those lines with <strong>// (two slashes)</strong></span>
-            </div>
-            <br><br>
-            <span>#SRC_IMAGE and #DST_IMAGE is the most commonly used definition and is also the base for the DST definitions of almost all others, so it's safe to use the arguments tfor other definition types.</span>
-            <br><br>
-            <div class="image">
-                <a name="image" class="title nodec">#IMAGE</a>
+        <br /><br />
+        <span
+          >#SRC_IMAGE and #DST_IMAGE is the most commonly used definition and is
+          also the base for the DST definitions of almost all others, so it's
+          safe to use the arguments tfor other definition types.</span
+        >
+        <br /><br />
+        <div class="image">
+          <a name="image" class="title nodec">#IMAGE</a>
+          <br /><br />
+          <span
+            >The #IMAGE definition is used to reference an image file in the
+            skin.</span
+          >
+          <br />
+          <span>Up to 100 can be defined for one single .csv file (?)</span>
+          <br />
+          <span
+            >Starting from the topmost-defined one, the
+            <strong>gr</strong> value is assigned starting from 0
+            automatically.</span
+          >
+          <span
+            >It's common practice to comment the gr number of a file on the same
+            line as the #IMAGE definition, for easy reference later.</span
+          >
+          <br /><br />
+          <span>Generally, it should look something like this:</span><br />
+          <img src="./img/def.png" alt="" style="width: 50%; height: auto" />
+          <br /><br />
+          Which correspond to these files in the skin folder:
+          <br />
+          <img
+            src="./img/sprites.png"
+            alt=""
+            style="width: 50%; height: auto"
+          />
+          <br /><br />
+          <div class="context">
+            <span>Example</span>
+            <br />
+            <span
+              >For example, the gr value used for
+              <span class="def">number.png</span> is 1:</span
+            >
+            <br />
+            <img
+              src="./img/demo1.png"
+              alt=""
+              style="width: 25%; height: auto"
+            />
+            <br /><br />
+            <span
+              >And the <span class="def">button.png</span> file, which is
+              defined fifth, has the gr value of 4:</span
+            >
+            <br />
+            <img
+              src="./img/demo2.png"
+              alt=""
+              style="width: 25%; height: auto"
+            />
+          </div>
+        </div>
+        <br />
+        <a class="title nodec" name="src_image">#SRC_IMAGE</a><br /><br />
+        <span>We will use image.png as an example.</span> <br />
+        <img src="./img/demo3.png" alt="" style="width: 50%; height: auto" />
+        <br /><br />
+        <span>The explaination for each setting is as follows:</span>
+        <table>
+          <tr>
+            <th>Setting</th>
+            <th>Description</th>
+          </tr>
+          <tr>
+            <td>(NULL)</td>
+            <td>
+              Depending on the definition type, it is <strong>index</strong>.
+              Those will be covered later. Usually is at 0
+            </td>
+          </tr>
+          <tr>
+            <td>gr</td>
+            <td>
+              Image group number, starting from 0. This is used to reference the
+              image in the #DST_XX definitions.
+              <br />
+              Special gr values:
+              <ul style="align-items: left; text-align: left">
+                <li>100: STAGEFILE</li>
+                <li>101: BACKBMP</li>
+                <li>102: BANNER</li>
+                <li>105: Skin's thumbnail in skin select</li>
+                <li>110: Black</li>
+                <li>111: White</li>
+              </ul>
+            </td>
+          </tr>
+          <tr>
+            <td>xywh</td>
+            <td>
+              Specify the starting coordinates and it's crop width and height.
+              <br />Depending on the software you're using, when the sprite you
+              want to implement is selected, it should display its coordinates
+              and size. <br />
+              <img
+                src="./img/dimensions.png"
+                alt=""
+                width="50%"
+                height="auto"
+              />
+              <br />
+              <span
+                >You can set wh to -1 if you want to use the entire image
+                file.</span
+              >
+              <h6>
+                I guess you can set only w or h to -1, but the applications for
+                that is not much
+              </h6>
+            </td>
+          </tr>
+          <tr>
+            <td>div_x <br />div_y</td>
+            <td>
+              Specifies the horizontal and vertical divisions of the image
+              sprite. <br />
+              It is used for animations, NUMBER or BUTTON definitions, among
+              other special ones. <br />
+              <br />
+              For example, if you have a sprite that is divided into 4
+              horizontal sections, you would set div_x to 4, and the game will
+              intepret as 4 frames of an animation (T -> E -> S -> T).
+            </td>
+          </tr>
+          <tr>
+            <td>cycle</td>
+            <td>
+              Specifies the total time for each animation cycle. When the number
+              defined is reached, the animation is completed and starts again at
+              the first frame. <br /><br />
+              The time for each frame is <span class="def">cycle</span> divided
+              by
+              <span class="def">(div_x * div_y), measured in miliseconds.</span>
+            </td>
+          </tr>
+          <tr>
+            <td>timer</td>
+            <td>
+              Specifies the timer in which the image definition is used, e.g. a
+              judgement hit timer, health-up timer, etc.
+            </td>
+          </tr>
+          <tr>
+            <td>op1-3</td>
+            <td>
+              It is unknown that if these even works, but it is speculated that
+              they are used for conditions in which the sprite will be
+              displayed.
+            </td>
+          </tr>
+        </table>
+        <br /><br />
+        <a name="dst_image" class="title nodec">#DST_IMAGE</a>
+        <br />
+        <span
+          >The #DST_IMAGE definition is used to paste the sprites in-game.</span
+        >
+        <br />
+        <img src="./img/demo4.png" alt="" style="width: 50%; height: auto" />
+        <br />
+        <br />
+        <table>
+          <tr>
+            <th>Setting</th>
+            <th>Description</th>
+          </tr>
+          <tr>
+            <td>(NULL)</td>
+            <td>
+              Index of the definition, same as in SRC. Uaually 0 unless
+              otherwise specified.
+            </td>
+          </tr>
+          <tr>
+            <td>time</td>
+            <td>
+              Specify the time in miliseconds when the DST condition is met.
+              <br />
+              This is usually used in transitions/animations, which requires
+              multiple lines of DST in the same sprite definition. Some examples
+              will be shown later.
+            </td>
+          </tr>
+          <tr>
+            <td>xywh</td>
+            <td>
+              The pasting destination in the LR2 window. <br /><br />
+              Usually it is kept within the 640x480 canvas (LR2 Vanilla) or
+              1280x720 (LR2 HD Patch) or 1920x1080 (LR2 FHD Patch).
+              <br />
+              But you can technically set it to any coordinates, even outside
+              the canvas (or even negative coordinates), but it will not be
+              visible in-game. This is useful for off-screen animations,
+              commonly used in most skins. <br /><br />
+              As for the width and height, it is usually set to the same as the
+              SRC definition for 1:1 rendering, but it can be set to any size,
+              even larger than the SRC definition.
+              <br />
+              It is also possible to set the w and h values to negative values,
+              which will change the anchor point of the sprite to the
+              bottom-right corner instead of the top-left corner.
+            </td>
+          </tr>
+          <tr>
+            <td>acc</td>
+            <td>
+              Sets the acceleration of the DST transition. <br />
+              This only changes how it accelerates, and doesn't change it's
+              playback speed.
+              <br />
+              <strong>acc</strong> values:
+              <ul style="align-items: left; text-align: left">
+                <li>0: None</li>
+                <li>1: Acceleration</li>
+                <li>2: Deceleration</li>
+                <li>3: Discontinuous (idk what this means honestly)</li>
+              </ul>
+            </td>
+          </tr>
+          <tr>
+            <td>a</td>
+            <td>
+              Sets the transparency of the sprite. <br /><br />
+              The blend must be non-zero in order for the transparency to work.
+            </td>
+          </tr>
+          <tr>
+            <td>rgb</td>
+            <td>
+              Sets the color of the sprite. The game will apply the color to the
+              sprite, and it can be used to change the display color of the
+              sprite.
+              <br />
+              Do note that if the selected sprite is black, the rgb value will
+              not change the color of the sprite, as it is already black.
+              <br />
+            </td>
+          </tr>
+          <tr>
+            <td>blend</td>
+            <td>
+              Sets the blending mode of the sprite.
+              <br />
+              The blend must be non-zero in order for the transparency to work.
+              <br />
+              Blend values:
+              <ul style="align-items: left; text-align: left">
+                <li>0: None</li>
+                <li>1: Alpha channel</li>
+                <li>2: Additive</li>
+                <li>3: Subtractive</li>
+                <li>4: Multiply</li>
+                <li>6: XOR</li>
+                <li>9: Inverted Multiply</li>
+                <li>10: Invert</li>
+                <li>11: Alpha channel-weighted multiply</li>
+              </ul>
+              Please note that the blending modes are not the same as in editing
+              software, and may not work as expected. To be honest, I don't know
+              what some of these blending modes do, and I haven't seen them used
+              in skins except for the alpha channel blending.
+            </td>
+          </tr>
+          <tr>
+            <td>filter</td>
+            <td>
+              Value to specify if the sprite scaling blurs it as the wh values
+              are enlarged. 0 to disable, 1 to enable.
+            </td>
+          </tr>
+          <tr>
+            <td>angle</td>
+            <td>
+              Sets the rotation angle of the sprite in degrees.
+              <br />
+              The rotation anchor is set to be the center value, and by default
+              if it's 0 it will pivot around the center of the sprite.
+            </td>
+          </tr>
+          <tr>
+            <td>center</td>
+            <td>
+              Sets the center point of the sprite for rotation.
+              <br />
+              The center point is set to be the center of the sprite by default,
+              but it can be set to any point in the sprite.
+              <br />
+              Each number from 0-9 represents a point in the sprite, starting
+              from the top-left corner and going left-to-right: <br /><br />
+              <span>
+                <table
+                  style="
+                    width: 100px;
+                    height: 100px;
+                    border: 1px solid rgb(255, 255, 255);
+                    border-collapse: collapse;
+                    text-align: center;
+                  "
+                >
+                  <tr>
+                    <td>7</td>
+                    <td>8</td>
+                    <td>9</td>
+                  </tr>
+                  <tr>
+                    <td>4</td>
+                    <td>5(0)</td>
+                    <td>6</td>
+                  </tr>
+                  <tr>
+                    <td>1</td>
+                    <td>2</td>
+                    <td>3</td>
+                  </tr>
+                </table>
+              </span>
+            </td>
+          </tr>
+          <tr>
+            <td>loop</td>
+            <td>
+              Sets the time the animation will start its loop in the animation
+              between multiple DST definitions. <br />
+              <br />
+              If the time is set to 0, the animation will loop back to the first
+              frame immediately.
+              <br />
+              If the time is set to -1, the animation will not loop at all and
+              display the last frame of the animation.
+              <br />
+              If the time is set to a non-zero value, the animation will loop
+              back to the first frame after the specified time.
+              <br /><br />
+              <span class="imp">Note:</span> If the time is set to a value
+              greater than the cycle time, the animation will not display at
+              all! <br />Also, the loop value and each value on the right of
+              this vlue is only taken from the topmost DST definition.
+            </td>
+          </tr>
+          <tr>
+            <td>timer</td>
+            <td>
+              Same as SRC mostly. The animation will start at time=0 when the
+              timer is activated.
+            </td>
+          </tr>
+          <tr>
+            <td>op1-3</td>
+            <td>
+              Specifies the conditions in which the sprite will be displayed.
+              You can use - or ! in front of the number to indicate a NOR logic,
+              which will apply the sprite <strong>if</strong> the condition of
+              that option isn't met.
+            </td>
+          </tr>
+        </table>
+
+        <br /><br />
+        <h2>Display priority</h2>
+        <span>
+          The display priority of the DST definitions is determined by the order
+          in which they are defined in the .csv file. The later a DST is defined
+          in the .csv fine, the higher its display priority is.
+          <br />
+          Take a look at the example below:
+        </span>
+        <br />
+        <img
+          src="./img/overlayingdst.png"
+          alt=""
+          style="width: 25%; height: auto"
+        /><br />
+        <span
+          >Here, the example above is achieved with DST_B defined after
+          DST_A.</span
+        >
+        <br /><br />
+        <a name="gendef" class="title nodec">Other generic definitions</a>
+        <br />
+        <span>
+          There are other definitions that follow the same pattern as #SRC_IMAGE
+          and #DST_IMAGE, but are used for different purposes. You can use as
+          many as you want.
+          <br />
+          Do note that the DST of these definitions are ommited as it is the
+          same as the #DST_IMAGE definition.
+        </span>
+        <br /><br />
+        <a name="number" class="title nodec">#SRC_NUMBER</a>
+        <br />
+        <span
+          >Numeric definitions. This can be used for scoring, judgement count
+          display, or even the current time. <br />
+          <br />
+          <img src="./img/demonum.png" alt="" style="width: 50%" />
+        </span>
+        <br /><br />
+        <table>
+          <tr>
+            <th>Setting</th>
+            <th>Description</th>
+          </tr>
+          <tr>
+            <td>(NULL)</td>
+            <td>
+              Index of the definition, same as in SRC. Uaually 0 unless
+              otherwise specified.
+            </td>
+          </tr>
+          <tr>
+            <td>gr</td>
+            <td>
+              Image group number, starting from 0. This is used to reference the
+              image in the #IMAGE definitions. <br />
+              In this example, 1 is used since the <strong>gr</strong> value of
+              number.png is <span class="def">1</span>.
+            </td>
+          </tr>
+          <tr>
+            <td>xywh</td>
+            <td>
+              It is the same as in #SRC_IMAGE, but it is used to specify the
+              size of the entire number sprite. <br /><br />
+              Then you must use the corresponding
+              <span class="def">div</span> number to specify how many digits the
+              number sprite can use.
+            </td>
+          </tr>
+          <tr>
+            <td>div_x <br />div_y</td>
+            <td>The product of <span class="def">div_x</span> and <span class="def">div_y</span> must be the multiples of the following:
+                <ul style="align-items: left; text-align: left">
+                    <li>10: Numbers from 0-9</li>
+                    <li>11: Numbers from 0-9, plus a trailing zero if the current value is less than <span class="def">keta</span>.</li>
+<li>24: Numbers from 0-9, plus a trailing zero and the plus/minus sign.</li>
+            </td>
+          </tr>
+            <tr>
+                <td>cycle</td>
+                <td>
+                Specifies the total time for each animation cycle. When the number
+                defined is reached, the animation is completed and starts again at
+                the first frame. Same as in #SRC_IMAGE.
+                </td>
+            </tr>
+            <tr>
+                <td>timer</td>
+                <td>
+                Specifies the timer in which the image definition is used, e.g. a
+                judgement hit timer, health-up timer, etc. Same as in #SRC_IMAGE.
+                </td>
+            </tr>
+            <tr>
+                <td>num</td>
+                <td>
+                Specifies the number to be tracked and displayed. Check the Numbers tab for the available numbers. <br />
+            </tr>
+            <tr>
+                <td>align</td>
+                <td>
+                Specifies the alignment of the number sprite. <br />
+                In Lunatic Rave 2, the alignment will also change the anchor point of the number display depending on the keta value.
+                <br>
+                Alignment values:
+                <ul style="align-items: left; text-align: left">
+                    <li>0: Right</li>
+                    <li>1: Left</li>
+                    <li>2: Center</li>
+            </tr>
+            <tr>
+                <td>keta</td>
+                <td>
+                Specifies the number of digits to be displayed. <br />
+                If the current value is less than keta, the sprite will display a trailing zero if the div_y value is 11.
+                <br />
+                If the div_y value is 24, it will display a plus/minus sign depending on the value.
                 <br><br>
-                <span>The #IMAGE definition is used to reference an image file in the skin.</span>
-                <br>
-                <span>Up to 100 can be defined for one single .csv file (?)</span>
-                <br>
-                <span>Starting from the topmost-defined one, the <strong>gr</strong> value is assigned starting from 0 automatically.</span>
-                <span>It's common practice to comment the gr number of a file on the same line as the #IMAGE definition, for easy reference later.</span>
-            </div>
-        </div>
+                Depending on the value of <span class="def">align</span>, the anchor point of the number display will change:
+                <ul style="align-items: left; text-align: left">
+                    <li>0: Least significant digit</li>
+                    <li>1: Most significant digit</li>
+                    <li>2: Literally the middle</li>
+                </ul>
+                Do note that in Lunatic Vibes, the anchor point is always set to the least significant digit, regardless of the alignment value.
+                <br><br>
+                <span class="imp">Note:</span> The keta value does not count the plus/minus sign, so you must add 1 to to the keta value to display the right amount of digits.
+                </td>
+            </tr>
+        </table>
+      </div>
     </div>
-    </body>
-    </html>
+  </body>
+</html>
