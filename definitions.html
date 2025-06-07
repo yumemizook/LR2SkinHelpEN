@@ -41,6 +41,12 @@
               >Generic Definitions</a
             >
           </li>
+          <li><a href="definitions.html#src_number">#SRC_NUMBER</a></li>
+          <li><a href="definitions.html#src_slider">#SRC_SLIDER</a></li>
+          <li><a href="definitions.html#src_bargraph">#SRC_BARGRAPH</a></li>
+          <li><a href="definitions.html#src_button">#SRC_BUTTON</a></li>
+          <li><a href="definitions.html#src_onmouse">#SRC_ONMOUSE</a></li>
+          <li><a href="definitions.html#src_text">#SRC_TEXT</a></li>
         </ul>
       </div>
       <div class="content">
@@ -159,7 +165,7 @@
             <td>(NULL)</td>
             <td>
               Depending on the definition type, it is <strong>index</strong>.
-              Those will be covered later. Usually is at 0
+              Those will be covered later. Usually is at 0.
             </td>
           </tr>
           <tr>
@@ -485,7 +491,6 @@
         <span
           >Numeric definitions. This can be used for scoring, judgement count
           display, or even the current time. <br />
-          <br />
           <img src="./img/demonum.png" alt="" style="width: 50%" />
         </span>
         <br /><br />
@@ -496,10 +501,7 @@
           </tr>
           <tr>
             <td>(NULL)</td>
-            <td>
-              Index of the definition, same as in SRC. Uaually 0 unless
-              otherwise specified.
-            </td>
+            <td>Index of the definition, same as in #SRC_IMAGE. Leave at 0.</td>
           </tr>
           <tr>
             <td>gr</td>
@@ -522,64 +524,507 @@
           </tr>
           <tr>
             <td>div_x <br />div_y</td>
-            <td>The product of <span class="def">div_x</span> and <span class="def">div_y</span> must be the multiples of the following:
-                <ul style="align-items: left; text-align: left">
-                    <li>10: Numbers from 0-9</li>
-                    <li>11: Numbers from 0-9, plus a trailing zero if the current value is less than <span class="def">keta</span>.</li>
-<li>24: Numbers from 0-9, plus a trailing zero and the plus/minus sign.</li>
+            <td>
+              The product of <span class="def">div_x</span> and
+              <span class="def">div_y</span> must be the multiples of the
+              following:
+              <ul style="align-items: left; text-align: left">
+                <li>10: Numbers from 0-9</li>
+                <li>
+                  11: Numbers from 0-9, plus a trailing zero if the current
+                  value is less than <span class="def">keta</span>.
+                </li>
+                <li>
+                  24: Numbers from 0-9, plus a trailing zero and the plus/minus
+                  sign.
+                </li>
+              </ul>
             </td>
           </tr>
-            <tr>
-                <td>cycle</td>
-                <td>
-                Specifies the total time for each animation cycle. When the number
-                defined is reached, the animation is completed and starts again at
-                the first frame. Same as in #SRC_IMAGE.
-                </td>
-            </tr>
-            <tr>
-                <td>timer</td>
-                <td>
-                Specifies the timer in which the image definition is used, e.g. a
-                judgement hit timer, health-up timer, etc. Same as in #SRC_IMAGE.
-                </td>
-            </tr>
-            <tr>
-                <td>num</td>
-                <td>
-                Specifies the number to be tracked and displayed. Check the Numbers tab for the available numbers. <br />
-            </tr>
-            <tr>
-                <td>align</td>
-                <td>
-                Specifies the alignment of the number sprite. <br />
-                In Lunatic Rave 2, the alignment will also change the anchor point of the number display depending on the keta value.
-                <br>
-                Alignment values:
-                <ul style="align-items: left; text-align: left">
-                    <li>0: Right</li>
-                    <li>1: Left</li>
-                    <li>2: Center</li>
-            </tr>
-            <tr>
-                <td>keta</td>
-                <td>
-                Specifies the number of digits to be displayed. <br />
-                If the current value is less than keta, the sprite will display a trailing zero if the div_y value is 11.
-                <br />
-                If the div_y value is 24, it will display a plus/minus sign depending on the value.
-                <br><br>
-                Depending on the value of <span class="def">align</span>, the anchor point of the number display will change:
-                <ul style="align-items: left; text-align: left">
-                    <li>0: Least significant digit</li>
-                    <li>1: Most significant digit</li>
-                    <li>2: Literally the middle</li>
-                </ul>
-                Do note that in Lunatic Vibes, the anchor point is always set to the least significant digit, regardless of the alignment value.
-                <br><br>
-                <span class="imp">Note:</span> The keta value does not count the plus/minus sign, so you must add 1 to to the keta value to display the right amount of digits.
-                </td>
-            </tr>
+          <tr>
+            <td>cycle</td>
+            <td>
+              Specifies the total time for each animation cycle. When the number
+              defined is reached, the animation is completed and starts again at
+              the first frame. Same as in #SRC_IMAGE.
+            </td>
+          </tr>
+          <tr>
+            <td>timer</td>
+            <td>
+              Specifies the timer in which the image definition is used, e.g. a
+              judgement hit timer, health-up timer, etc. Same as in #SRC_IMAGE.
+            </td>
+          </tr>
+          <tr>
+            <td>num</td>
+            <td>
+              Specifies the number to be tracked and displayed. Check the
+              Numbers tab for the available numbers. <br />
+            </td>
+          </tr>
+
+          <tr>
+            <td>align</td>
+            <td>
+              Specifies the alignment of the number sprite. <br />
+              In Lunatic Rave 2, the alignment will also change the anchor point
+              of the number display depending on the keta value.
+              <br />
+              Alignment values:
+              <ul style="align-items: left; text-align: left">
+                <li>0: Right</li>
+                <li>1: Left</li>
+                <li>2: Center</li>
+              </ul>
+            </td>
+          </tr>
+
+          <tr>
+            <td>keta</td>
+            <td>
+              Specifies the number of digits to be displayed. <br />
+              If the current value is less than keta, the sprite will display a
+              trailing zero if the div_y value is 11.
+              <br />
+              If the div_y value is 24, it will display a plus/minus sign
+              depending on the value.
+              <br /><br />
+              Depending on the value of <span class="def">align</span>, the
+              anchor point of the number display will change:
+              <ul style="align-items: left; text-align: left">
+                <li>0: Least significant digit</li>
+                <li>1: Most significant digit</li>
+                <li>2: Literally the middle</li>
+              </ul>
+              Do note that in Lunatic Vibes, the anchor point is always set to
+              the least significant digit, regardless of the alignment value.
+              <br /><br />
+              <span class="imp">Note:</span> The keta value does not count the
+              plus/minus sign, so you must add 1 to to the keta value to display
+              the right amount of digits.
+            </td>
+          </tr>
+        </table>
+        <br />
+        <a name="src_slider" class="title nodec">#SRC_SLIDER</a>
+        <br />Slider definitions. This is used for adjusting parameters in the
+        game, such as volume, speed, and other settings by clicking and dragging
+        the slider. <br />
+        <img src="./img/demosli.png" alt="" style="width: 50%" />
+        <br />
+        <table>
+          <tr>
+            <th>Setting</th>
+            <th>Description</th>
+          </tr>
+          <tr>
+            <td>(NULL)</td>
+            <td>
+              Index of the definition, same as in SRC. Doesn't really accept
+              values other than 0.
+            </td>
+          </tr>
+
+          <tr>
+            <td>gr</td>
+            <td>
+              Since slider.png is used, the <strong>gr</strong> value is 2.
+              <br />
+              Change to the desired slider sprite.
+            </td>
+          </tr>
+          <tr>
+            <td>xywh</td>
+            <td>
+              The size of the slider sprite. <br />
+              <br />
+              <span class="imp">Note:</span> this is the entire sliding part,
+              not the frame of the slider.
+              <br />
+              The wh values can be set to -1 to use the entire image file.
+            </td>
+          </tr>
+          <tr>
+            <td>div_x <br />div_y</td>
+            <td>
+              The number of frames in the slider sprite. <br />
+              Usually it is set to 1 unless you want to use an animation for the
+              slider.
+            </td>
+          </tr>
+          <tr>
+            <td>cycle</td>
+            <td>
+              Specifies the total time for each animation cycle. When the number
+              defined is reached, the animation is completed and starts again at
+              the first frame. Same as in #SRC_IMAGE.
+            </td>
+          </tr>
+          <tr>
+            <td>timer</td>
+            <td>
+              Specifies the timer in which the image definition is used. Same as
+              in #SRC_IMAGE.
+            </td>
+          </tr>
+          <tr>
+            <td>muki</td>
+            <td>
+              Specifies the direction of the slider in which the slider moves.
+              <br />
+              <ul style="align-items: left; text-align: left">
+                <li>0: Bottom to top</li>
+                <li>1: Left to right</li>
+                <li>2: Top to bottom</li>
+                <li>3: Right to left</li>
+              </ul>
+            </td>
+          </tr>
+          <tr>
+            <td>range</td>
+            <td>
+              Specifies the range of the slider. <br />
+              The slider will move from x to the (range + x), where x is the x
+              value. Duh.
+              <br />
+              <br />
+              <span class="imp">Note:</span> If you're using the slider for
+              adjusting the volume, keep in mind that the range is split to 101
+              steps from 0-100 instead of 100.
+            </td>
+          </tr>
+
+          <tr>
+            <td>type</td>
+            <td>
+              Specifies the type of the slider. <br />
+              Definitions can be found in the Numbers tab.
+            </td>
+          </tr>
+          <tr>
+            <td>disable</td>
+            <td>
+              Specifies if the slider can be changed via mouse. <br />
+              <br />
+              If set to 1, the slider will be disabled and cannot be changed.
+              <br />
+              If set to 0, the slider will be enabled and can be changed.
+            </td>
+          </tr>
+        </table>
+        <br /><br />
+        <a name="src_bargraph" class="title nodec">#SRC_BARGRAPH</a>
+        <br />
+        <span
+          >Draws bar charts. Usually used for displaying the health bar, or the
+          score bar.</span
+        >
+        <br />
+        <span>It is similar to the pacemaker graph on the right in IIDX.</span
+        ><br />
+        <img src="./img/demobar.png" alt="" style="width: 50%" /><br />
+        <table>
+          <tr>
+            <th>Setting</th>
+            <th>Description</th>
+          </tr>
+          <tr>
+            <td>(NULL)</td>
+            <td>
+              Index of the definition, same as in SRC. Doesn't really accept
+              values other than 0.
+            </td>
+          </tr>
+          <tr>
+            <td>gr</td>
+            <td>
+              Since bargraph.png is used, the <strong>gr</strong> value is 3.
+              <br />
+              Change to the desired bar graph sprite.
+            </td>
+          </tr>
+          <tr>
+            <td>xywh</td>
+            <td>
+              The size of the bar graph sprite. <br />
+              <br />
+              <span class="imp">Note:</span> the wh values in #DST_BARGRAPH is
+              used for when the bargraph is 100% full.
+            </td>
+          </tr>
+          <tr>
+            <td>div_x <br />div_y</td>
+            <td>
+              The number of divisions in the bar graph sprite. Same as in
+              #SRC_IMAGE.
+            </td>
+          </tr>
+          <tr>
+            <td>cycle</td>
+            <td>Specifies the total time for each animation cycle.</td>
+          </tr>
+          <tr>
+            <td>timer</td>
+            <td>
+              Specifies the timer in which the bargraph definition is used.
+            </td>
+          </tr>
+
+          <tr>
+            <td>type</td>
+            <td>
+              The type of the bar graph. Definitions can be found in the Numbers
+              tab.
+            </td>
+          </tr>
+          <tr>
+            <td>muki</td>
+            <td>
+              Specifies the rise direction of the bar graph.
+              <ul style="align-items: left; text-align: left">
+                <li>0: Right</li>
+                <li>1: Down</li>
+              </ul>
+              <span class="imp">Note:</span> If you want to use a bar graph that
+              rises from the bottom or to the left, you must set the wh value to
+              a negative value.
+            </td>
+          </tr>
+        </table>
+        <br /><br />
+        <a name="src_button" class="title nodec">#SRC_BUTTON</a>
+        <br />
+        <span
+          >Button definitions. The buttons are used for changing play options,
+          selecting functions, and changing various settings.
+        </span>
+        <br />
+        <img src="./img/demobut.png" alt="" style="width: 50%" />
+        <br />
+        <table>
+          <tr>
+            <th>Settings</th>
+            <th>Description</th>
+          </tr>
+          <tr>
+            <td>(NULL)</td>
+            <td>Usually the value is 0. Same as in #SRC_IMAGE</td>
+          </tr>
+          <tr>
+            <td>gr</td>
+            <td>
+              Image group number, starting from 0. This is used to reference the
+              image in the #IMAGE definitions. <br />
+              In this example, 4 is used since the <strong>gr</strong> value of
+              button.png is <span class="def">4</span>.
+            </td>
+          </tr>
+          <tr>
+            <td>xywh</td>
+            <td>
+              The size of the entire button sprite. <br />
+              <br />
+              Depending on the button definition you're using, different amounts
+              of divs needs to be set in order to display its value correctly.
+            </td>
+          </tr>
+          <tr>
+            <td>div_x <br />div_y</td>
+            <td>
+              The number of frames in the button sprite. <br />
+              The number of frames is determined by the type of the button
+              definition.
+              <br /><br />
+              <span class="imp">Note:</span> It is highly recommended to set
+              either div_x or div_y to 1, as it is unconfirmed that the
+              definitions will be read correctly.
+            </td>
+          </tr>
+          <tr>
+            <td>cycle</td>
+            <td>
+              Specifies the total time for each animation cycle. When the number
+              defined is reached, the animation is completed and starts again at
+              the first frame. Same as in #SRC_IMAGE.
+            </td>
+          </tr>
+          <tr>
+            <td>timer</td>
+            <td>
+              Specifies the timer in which the image definition is used. Same as
+              in #SRC_IMAGE.
+            </td>
+          </tr>
+          <tr>
+            <td>type</td>
+            <td>
+              The type of the button. Definitions can be found in the Numbers
+              tab.
+            </td>
+          </tr>
+          <tr>
+            <td>click</td>
+            <td>
+              Specifies if the button can be clicked. <br />
+              0 to disable, 1 to enable. <br />
+              <br />
+              If the value is 1, press on the left half of the button to
+              decrease the value, and on the right half to increase the value.
+            </td>
+          </tr>
+          <tr>
+            <td>panel</td>
+            <td>
+              Specifies which panel will the button open. <br />
+              Possible values ranges from 1 to 9, or -1 for when all panels are
+              off.
+            </td>
+          </tr>
+          <tr>
+            <td>plusonly</td>
+            <td>
+              Specifies if the button value can only be incremented. <br />
+              0 to disable, 1 to enable. <br /><br />
+              <span class="imp">Note:</span> If the value is set to 1, you can
+              click anywhere in the button definition.
+            </td>
+          </tr>
+        </table>
+        <br /><br />
+        <a name="src_onmouse" class="title nodec">#SRC_ONMOUSE</a>
+        <br />
+        <span
+          >Allows the display of an alternative sprite when the mouse is
+          hovering on that sprite.</span
+        >
+        <br />
+        <img src="./img/demomouse.png" alt="" style="width: 50%" />
+        <table>
+          <tr>
+            <th>Settings</th>
+            <th>Definitions</th>
+          </tr>
+          <tr>
+            <td>(NULL)</td>
+            <td>
+              The value here is 0. How many times do I have to repeat this?
+            </td>
+          </tr>
+          <tr>
+            <td>gr</td>
+            <td>Since we're gonna use onmouse.png, in this example it's 5.</td>
+          </tr>
+          <tr>
+            <td>xywh</td>
+            <td>The size of the sprite. <br /></td>
+          </tr>
+          <tr>
+            <td>div_x <br />div_y</td>
+            <td>
+              The number of frames in the sprite. <br />
+              Usually it is set to 1, but you can use an animation for the
+              sprite if you set it to other than 1.
+            </td>
+          </tr>
+          <tr>
+            <td>cycle</td>
+            <td>
+              Specifies the total time for each animation cycle. When the number
+              defined is reached, the animation is completed and starts again at
+              the first frame. Same as in #SRC_IMAGE.
+            </td>
+          </tr>
+          <tr>
+            <td>timer</td>
+            <td>
+              Specifies the timer in which the image definition is used. Same as
+              in #SRC_IMAGE.
+            </td>
+          </tr>
+          <tr>
+            <td>panel</td>
+            <td>
+              Specify which panel can the onmouse definition be used. Same as
+              #SRC_BUTTON.
+            </td>
+          </tr>
+          <tr>
+            <td>x2y2w2h2</td>
+            <td>
+              The coordinates and size of the alternative sprite when the mouse
+              is hovering on it. <br />
+              <br />
+              The values are relative to the original sprite.
+            </td>
+          </tr>
+        </table>
+        <br /><br />
+        <a name="src_text" class="title nodec">#SRC_TEXT</a>
+        <br />
+        <span
+          >Text definitions. This is used for displaying text in the game, such
+          as the song title, artist name, and other text.</span
+        >
+        <br /><span>
+          Do note that if the text string is longer than the w value, the text
+          will be condensed to fit the width of the text box.
+        </span>
+        <br />
+        <img src="./img/demotext.png" alt="" style="width: 50%" />
+        <br />
+        <table>
+          <tr>
+            <th>Settings</th>
+            <th>Description</th>
+          </tr>
+          <tr>
+            <td>(NULL)</td>
+            <td>
+              The value here is 0
+            </td>
+          </tr>
+          <tr>
+            <td>font</td>
+            <td>
+              Fundamentally, it is the same as <strong>gr</strong> value, but it is counted for each #LR2FONT definition.
+            </td>
+          </tr>
+          <tr>
+            <td>st</td>
+            <td>
+              Specifies which text to display. Check Numbers tab for the available text strings.
+            </td>
+          </tr>
+          <tr>
+            <td>align</td>
+            <td>
+              Specifies the alignment of the text. <br />
+              Alignment values:
+              <ul style="align-items: left; text-align: left">
+                <li>0: Left</li>
+                <li>1: Center</li>
+                <li>2: Right</li>
+              </ul>
+              <span class="imp">Note:</span> The alignment value will also change the x value in the DST definition.
+          </tr>
+          <tr>
+            <td>edit</td>
+            <td>
+              Specifies if the text can be edited. <br />
+              0 to disable, 1 to enable.
+              <br />
+              <br />
+              If the value is 1, the text will be editable in-game, and the user
+              can change the text by clicking on it.
+          </tr>
+          <tr>
+            <td>panel</td>
+            <td>
+              Specifies which panel can the text definition be used. <br />
+              Possible values ranges from 1 to 9, or -1 for when all panels are
+              off.
+          </tr>
         </table>
       </div>
     </div>
