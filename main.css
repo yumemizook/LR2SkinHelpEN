@@ -1,9 +1,10 @@
 body {
   background-color: black;
-  background-image: url("./kitafrozen.png");
+  background-image: url("./bg.jpg");
   background-repeat: no-repeat;
   background-attachment: fixed;
-  background-position: right bottom;
+  background-position: center;
+  background-size: cover;
   font-family: "Mochiy Pop One", sans-serif;
   font-weight: 400;
   font-size: smaller;
