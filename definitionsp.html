@@ -1,0 +1,175 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>LR2 Skin Help (English Version)</title>
+    <link rel="stylesheet" href="main.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Mochiy+Pop+One&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+  </head>
+
+  <body>
+    <div class="nav">
+      <div class="left">
+        <nav><a href="index.html" class="">Home</a></nav>
+        <nav><a href="skinbasics.html" class="">Basics of a skin</a></nav>
+        <nav><a href="definitions.html" class="">Definitions</a></nav>
+        <nav><a href="definitionsa.html" class="">Advanced Definitions</a></nav>
+        <nav><a href="definitionsp.html" class="">Play Definitions</a></nav>
+        <nav><a href="dstop.html" class="">Numbers</a></nav>
+        <nav><a href="misc.html" class="">Misc</a></nav>
+        <nav><a href="misc2.html" class="">Problemdump</a></nav>
+      </div>
+      <div class="right">LR2 Skin Help (EN)</div>
+    </div>
+    <div class="body">
+      <div class="tableocontents">
+        <h4>Table of Contents</h4>
+        <ul>
+          <li>
+            <a href="definitionsa.html#skinex" style="color: aqua"
+              >Skin definition-related</a
+            >
+          </li>
+          <li><a href="definitionsa.html#information">#INFORMATION</a></li>
+          <li><a href="definitionsa.html#customoption">#CUSTOMOPTION</a></li>
+          <li><a href="definitionsa.html#customfile">#CUSTOMFILE</a></li>
+          <li><a href="definitionsa.html#eoh">#ENDOFHEADER</a></li>
+          <li>
+            <a href="definitionsa.html#branch" style="color: aqua"
+              >Branching-related</a
+            >
+          </li>
+          <li>
+            <a href="definitionsa.html#if">#IF (#ELSEIF, #ELSE, #ENDIF)</a>
+          </li>
+          <li><a href="definitionsa.html#include">#INCLUDE</a></li>
+          <li><a href="definitionsa.html#setoption">#SETOPTION</a></li>
+          <li>
+            <a href="definitionsa.html#timedef" style="color: aqua"
+              >Time control-related</a
+            >
+          </li>
+          <li><a href="definitionsa.html#startinput">#STARTINPUT</a></li>
+          <li><a href="definitionsa.html#skip">#SKIP</a></li>
+          <li><a href="definitionsa.html#loadstart">#LOADSTART</a></li>
+          <li><a href="definitionsa.html#loadend">#LOADEND</a></li>
+          <li><a href="definitionsa.html#playstart">#PLAYSTART</a></li>
+          <li><a href="definitionsa.html#close">#CLOSE</a></li>
+          <li><a href="definitionsa.html#fadeout">#FADEOUT</a></li>
+          <li>
+            <a href="definitionsa.html#otherdef" style="color: aqua"
+              >Other definitions</a
+            >
+          </li>
+        </ul>
+      </div>
+      <div class="content">
+        <div class="section0">
+          <h2>Play Skin definitions</h2>
+          <span
+            >In vanilla LR2, you can set the play skin options by holding down
+            the numeric keys (not on the numpad) and pressing arrow keys
+            accordingly. <br /><br />
+            <ul>
+              <li>
+                Key 1: Change skin position (Left/Right to change x, Up/Down to
+                change y)
+              </li>
+              <li>Key 2: Change zoom level (Up/Down)</li>
+              <li>
+                Key 3: Change judge display position (Left/Right to change x,
+                Up/Down to change y)
+              </li>
+              <li>Key 4: Change note size (Left/Right)</li>
+              <li>
+                Key 5: Dark mode (Dark 1: Hides everything not on
+                <span class="def">gr</span> 0 (?), Dark 2: Hides everything but
+                notes and judgement)
+              </li>
+              <li>Key 6: Change 1P note position</li>
+              <li>Key 7: Change 2P note position</li>
+            </ul>
+            <br /><br />
+            In Lunatic Vibes, you can instead press F1 to bring up the skin
+            options menu, which allows you to change the skin position, judge
+            display position, note size, and note positions.
+          </span>
+          <br /><br />
+          <a name="srcbga" class="title nodec">#SRC_BGA</a>
+          <br /><br />
+          <img src="./img/srcbga.png" alt="" style="width: 75%" />
+          <br /><br />
+          <span
+            >The definition of the BGA of a chart. <br />It's mostly a dummy
+            definition, with the ecxeption of the last 3 arguments. If any of
+            those (nobase, nolayer, nopoor) is 1, that layer won't show up.
+            <br /><br />
+            You can instead define its properties in #DST_BGA.
+          </span>
+          <br /><br />
+          <a name="srcjudgeline" class="title nodec">#SRC_JUDGELINE</a>
+          <br /><br />
+          <img src="./img/srcjudgeline.png" alt="" style="width: 75%" />
+          <br /><br />
+          <span
+            >Definition of the judgement line. This only serves are a visual cue
+            for where the note is supposes to go to. <br />The actual judgement
+            processing line is the y value in #DST_NOTE. <br />However, this is
+            used to specify the part that move up ith LIFT.
+          </span>
+          <table>
+            <tr>
+              <th>Definition</th>
+              <th>Description</th>
+            </tr>
+            <tr>
+              <td>index (NULL)</td>
+              <td>
+                Specify the playside:
+                <ul>
+                  <li>0: 1P side</li>
+                  <li>1: 2P side</li>
+                </ul>
+              </td>
+            </tr>
+          </table>
+          <br /><br />
+          <a name="srcline" class="title nodec">#SRC_LINE</a>
+          <br /><br />
+          <img src="./img/srcline.png" alt="" style="width: 75%" />
+          <br /><br />
+          <span
+            >Defines the measure divider line. If you don't like it, you can
+            make it transparent, but if you don't define it, <br />
+            <span class="steps" style="font-size: x-large"
+              >THE CLIENT WILL CRASH WHEN THE CHART LOADS!!!</span
+            ></span
+          >
+          <table>
+            <tr>
+              <th>Definition</th>
+              <th>Description</th>
+            </tr>
+            <tr>
+              <td>index (NULL)</td>
+              <td>
+                Specify the playside:
+                <ul>
+                  <li>0: 1P side</li>
+                  <li>1: 2P side</li>
+                </ul>
+              </td>
+            </tr>
+          </table>
+          <br /><br />
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
