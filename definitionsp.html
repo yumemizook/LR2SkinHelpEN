@@ -32,38 +32,49 @@
         <h4>Table of Contents</h4>
         <ul>
           <li>
-            <a href="definitionsa.html#skinex" style="color: aqua"
-              >Skin definition-related</a
+            <a href="definitionsp.html#play" style="color: aqua">Play Skin</a>
+          </li>
+          <li><a href="definitionsp.html#srcbga">#SRC_BGA</a></li>
+          <li><a href="definitionsp.html#srcjudgeline">#SRC_JUDGELINE</a></li>
+          <li><a href="definitionsp.html#srcline">#SRC_LINE</a></li>
+          <li><a href="definitionsp.html#srcnote">#SRC_NOTE</a></li>
+          <li><a href="definitionsp.html#srcnowjudge">#SRC_NOWJUDGE</a></li>
+          <li><a href="definitionsp.html#srcnowcombo">#SRC_NOWCOMBO</a></li>
+          <li>
+            <a href="definitionsp.html#srcgroovegauge">#SRC_GROOVEGAUGE</a>
+          </li>
+          <li>
+            <a href="definitionsp.html#select" style="color: aqua"
+              >Song Select skin</a
             >
           </li>
-          <li><a href="definitionsa.html#information">#INFORMATION</a></li>
-          <li><a href="definitionsa.html#customoption">#CUSTOMOPTION</a></li>
-          <li><a href="definitionsa.html#customfile">#CUSTOMFILE</a></li>
-          <li><a href="definitionsa.html#eoh">#ENDOFHEADER</a></li>
           <li>
-            <a href="definitionsa.html#branch" style="color: aqua"
-              >Branching-related</a
+            <a href="definitionsp.html#srcbarbody">#SRC_BAR_BODY</a>
+          </li>
+          <li><a href="definitionsp.html#dstbarbody">#DST_BAR_BODY</a></li>
+          <li><a href="definitionsp.html#barcenter">#BAR_CENTER</a></li>
+          <li>
+            <a href="definitionsp.html#baravailable">#BAR_AVAILABLE</a>
+          </li>
+          <li><a href="definitionsp.html#srcbarflash">#SRC_BAR_FLASH</a></li>
+          <li><a href="definitionsp.html#srcbarlevel">#SRC_BAR_LEVEL</a></li>
+          <li><a href="definitionsp.html#srcbarlamp">#SRC_BAR_LAMP</a></li>
+          <li><a href="definitionsp.html#srcbartitle">#SRC_BAR_TITLE</a></li>
+          <li><a href="definitionsp.html#srcbarrank">#SRC_BAR_RANK</a></li>
+          <li><a href="definitionsp.html#srcbarrival">#SRC_BAR_RIVAL</a></li>
+          <li><a href="definitionsp.html#srcreadme">#SRC_README</a></li>
+          <li>
+            <a href="definitionsp.html#srcmousecursor">#SRC_MOUSECURSOR</a>
+          </li>
+          <li>
+            <a href="definitionsp.html#results" style="color: aqua"
+              >Results skin</a
             >
           </li>
+          <li><a href="definitionsa.html#srcgaugechart">#SRC_GAUGECHART</a></li>
+          <li><a href="definitionsa.html#srcscorechart">#SRC_SCORECHART</a></li>
           <li>
-            <a href="definitionsa.html#if">#IF (#ELSEIF, #ELSE, #ENDIF)</a>
-          </li>
-          <li><a href="definitionsa.html#include">#INCLUDE</a></li>
-          <li><a href="definitionsa.html#setoption">#SETOPTION</a></li>
-          <li>
-            <a href="definitionsa.html#timedef" style="color: aqua"
-              >Time control-related</a
-            >
-          </li>
-          <li><a href="definitionsa.html#startinput">#STARTINPUT</a></li>
-          <li><a href="definitionsa.html#skip">#SKIP</a></li>
-          <li><a href="definitionsa.html#loadstart">#LOADSTART</a></li>
-          <li><a href="definitionsa.html#loadend">#LOADEND</a></li>
-          <li><a href="definitionsa.html#playstart">#PLAYSTART</a></li>
-          <li><a href="definitionsa.html#close">#CLOSE</a></li>
-          <li><a href="definitionsa.html#fadeout">#FADEOUT</a></li>
-          <li>
-            <a href="definitionsa.html#otherdef" style="color: aqua"
+            <a href="definitionsp.html#other" style="color: aqua"
               >Other definitions</a
             >
           </li>
@@ -71,7 +82,9 @@
       </div>
       <div class="content">
         <div class="section0">
-          <h2>Play Skin definitions</h2>
+          <h2>
+            P <a name="play" class="title nodec">Play Skin definitions</a>
+          </h2>
           <span
             >In vanilla LR2, you can set the play skin options by holding down
             the numeric keys (not on the numpad) and pressing arrow keys
@@ -168,6 +181,93 @@
             </tr>
           </table>
           <br /><br />
+          <a name="srcnote" class="title nodec">#SRC_NOTE</a>
+          <br />
+          <span
+            >Notes definition. The judgement is processed at DST_y, so make sure
+            that this is properly defined. <br /><br />
+            <span>
+              It's not mandatory to definte the notes, but well... you can't hit
+              anything. The game will pass those as misses even if you "hit"
+              them.
+              <br />
+              It's also worth noting that the notes can only fall downwards, so
+              you can't define notes that go upwards via normal means.
+            </span>
+          </span>
+          <br /><br />
+          <img src="./img/srcnote.png" alt="" style="width: 75%" />
+          <table>
+            <tr>
+              <th>Definition</th>
+              <th>Description</th>
+            </tr>
+            <tr>
+              <td>SRC_NOTETYPE</td>
+              <td>
+                Specify the notes to be defined.
+                <ul>
+                  <li>SRC_NOTE: Normal notes</li>
+                  <li>SRC_MINE: Mines</li>
+                  <li>SRC_LN_START: LN (Hold) heads</li>
+                  <li>SRC_LN_END: LN (Hold) tails</li>
+                  <li>SRC_LN_BODY: LN (Hold) bodies</li>
+                  <br />
+                  These will default to SRC_NOTE if not specified.
+                  <li>SRC_AUTO_NOTE: Normal notes (Auto)</li>
+                  <li>SRC_AUTO_MINE: Mines (Auto)</li>
+                  <li>SRC_AUTO_LN_START: LN (Hold) heads (Auto)</li>
+                  <li>SRC_AUTO_LN_END: LN (Hold) tails (Auto)</li>
+                  <li>SRC_AUTO_LN_BODY: LN (Hold) bodies (Auto)</li>
+                </ul>
+              </td>
+            </tr>
+            <tr>
+              <td>index (NULL)</td>
+              <td>
+                The number index to assign notes to. It ranges from 0 to 9, with
+                0 for the scratch lane. For 2P definitions, it ranges from 10 to
+                19.
+              </td>
+            </tr>
+          </table>
+          <br /><br />
+          <a name="srcnowjudge" class="title nodec">#SRC_NOWJUDGE</a>
+          <br /><br />
+          <span
+            >Dedicated judgement indicator. <br /><br />
+            For 1P, it is #SRC_NOWJUDGE_1P, and for 2P, it is #SRC_NOWJUDGE_2P.
+            It is used in conjunction with timer46 and timer47.
+          </span>
+          <br />
+          <img src="./img/srcnowjudge.png" alt="" style="width: 75%" />
+          <table>
+            <tr>
+              <th>Definition</th>
+              <th>Description</th>
+            </tr>
+            <tr>
+              <td>index (NULL)</td>
+              <td>
+                Specifies the judgement:
+                <ul>
+                  <li>0: FAIL / Empty POOR</li>
+                  <li>1: MISS / POOR</li>
+                  <li>2: BAD</li>
+                  <li>3: GOOD</li>
+                  <li>4: GREAT</li>
+                  <li>5: PGREAT</li>
+                </ul>
+              </td>
+            </tr>
+            <tr>
+              <td>noshift</td>
+              <td>
+                Disable judgement shifting when a new digit for the combo is
+                used.
+              </td>
+            </tr>
+          </table>
         </div>
       </div>
     </div>
