@@ -1,0 +1,275 @@
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>LR2 Skin Help (English Version)</title>
+  <link rel="stylesheet" href="main.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Mochiy+Pop+One&display=swap" rel="stylesheet" />
+</head>
+
+<body>
+  <div class="nav">
+    <div class="left">
+      <nav><a href="index.html" class="">Home</a></nav>
+      <nav><a href="skinbasics.html" class="">Basics of a skin</a></nav>
+      <nav><a href="definitions.html" class="">Definitions</a></nav>
+      <nav><a href="definitionsa.html" class="">Advanced Definitions</a></nav>
+      <nav><a href="definitionsp.html" class="">Play Definitions</a></nav>
+      <nav><a href="dstop.html" class="">Numbers</a></nav>
+      <nav><a href="misc.html" class="">Misc</a></nav>
+      <nav><a href="misc2.html" class="">Problemdump</a></nav>
+    </div>
+    <div class="right">LR2 Skin Help (EN)</div>
+  </div>
+  <div class="body">
+    <div class="tableocontents">
+      <h4>Table of Contents</h4>
+      <ul>
+        <li>
+          <a href="definitionsa.html#skinex" style="color: aqua">Skin definition-related</a>
+        </li>
+        <li><a href="definitionsa.html#information">#INFORMATION</a></li>
+        <li><a href="definitionsa.html#customoption">#CUSTOMOPTION</a></li>
+        <li><a href="definitionsa.html#customfile">#CUSTOMFILE</a></li>
+        <li><a href="definitionsa.html#eoh">#ENDOFHEADER</a></li>
+        <li>
+          <a href="definitionsa.html#branch" style="color: aqua">Branching-related</a>
+        </li>
+        <li><a href="definitionsa.html#if">#IF (#ELSEIF, #ELSE, #ENDIF)</a></li>
+        <li><a href="definitionsa.html#include">#INCLUDE</a></li>
+        <li><a href="definitionsa.html#setoption">#SETOPTION</a></li>
+        <li><a href="definitionsa.html#gendef" style="color: aqua">Time control-related</a></li>
+        <li><a href="definitionsa.html#src_button">#SRC_BUTTON</a></li>
+        <li><a href="definitionsa.html#src_onmouse">#SRC_ONMOUSE</a></li>
+        <li><a href="definitionsa.html#src_text">#SRC_TEXT</a></li>
+        <li> <a href="definitionsa.html#otherdef" style="color: aqua">Other definitions</a></li>
+      </ul>
+
+    </div>
+    <div class="content">
+
+      <h2>Advanced Definitions</h2>
+      <span>This page contains advanced definitions of the skins that are not sprite-related, but rather the ones that
+        alter the behaviors of the skins itself.</span>
+      <br><br>
+      <span>These definitions are compatible with LR2 and its forks.</span>
+      <br>
+      <br>
+      <div class="section0">
+        <a name="skinex" class="title nodec">Skin definition-related</a>
+        <br> <br>
+        <span>The definitions here decides what the skin is and what it uses. As far as I know, they are commonly
+          defined in the .lr2skin file itself.</span>
+        <br> <br>
+
+        <a name="information" class="title nodec">#INFORMATION</a>
+        <br>
+        <span>These definitions are used to define the skin itself, such as its name, author, and other information of
+          the LR2 skin file.</span>
+        <br>
+        <span>These definitions are commonly used in the .lr2skin file itself.</span>
+        <br><br>
+        <img src="./img/skininfo.png" alt="">
+        <table>
+          <tr>
+            <th>Definition</th>
+            <th>Description</th>
+          </tr>
+          <tr>
+            <td>type</td>
+            <td>
+              Specifies what the skin is used for.
+              <br> The indexes are as follows:
+              <ul>
+                <li>0: 7 Keys</li>
+                <li>1: 5 Keys</li>
+                <li>2: 14 Keys</li>
+                <li>3: 10 Keys</li>
+                <li>4: 9 Keys</li>
+                <li>5: Music Select</li>
+                <li>6: Decide</li>
+                <li>7: Result</li>
+                <li>8: KeyConfig</li>
+                <li>9: SkinSelect</li>
+                <li>10: Soundset</li>
+                <li style="color: grey;">11: Theme (not supported?)</li>
+                <li>12: 5 Keys Battle</li>
+                <li>13: 7 Keys Battle</li>
+                <li style="color: grey;">14: Course Edit (not supported)</li>
+                <li>15: Course Result</li>
+                <li style="color: grey;">16: 9 Keys Battle (not supported afaik)</li>
+                <li style="color: grey;">17: Opening (doesn't exist)</li>
+                <li style="color: grey;">18: Mode Select (doesn't exist)</li>
+                <li style="color: grey;">19: Mode decide (doesn't exist)</li>
+                <li style="color: grey;"> 20: Course Select (doesn't exist?)</li>
+              </ul>
+            </td>
+          </tr>
+          <tr>
+            <td>title</td>
+            <td>Defines the name of the skin.</td>
+          </tr>
+          <tr>
+            <td>maker</td>
+            <td>Defines the author of the skin.</td>
+          </tr>
+          <tr>
+            <td>thumbnail</td>
+            <td>The image to be displayed when live skin preview is off.</td>
+          </tr>
+        </table>
+        <br>
+        <a name="customoption" class="title nodec">#CUSTOMOPTION</a>
+        <br>
+        <span>This is where you define custom skin options that the player can choose between.</span>
+        <br>
+        <span>While the DST options slots range from 900-998 (999 if you use LVF).
+          <br> <br>
+          According to the original guide, you can define 21 of that and #CUSTOMFILE definitions before the client
+          starts experiencing issues. Surely you won't need that many right? <h6 class="hide">You have beatoraja if
+            you need that
+            ffs</h6>
+        </span>
+        <br>
+        <img src="./img/customoption.png" alt="">
+        <br>
+        <table>
+          <tr>
+            <th>Definition</th>
+            <th>Description</th>
+          </tr>
+          <tr>
+            <td>title</td>
+            <td>Specifies what the option does. It should be short and easy to understand.</td>
+          </tr>
+          <tr>
+            <td>dst_op</td>
+            <td>Specifies the starting DST number slot of the first option. Subsequent numbers will increment its DST
+              number.</td>
+          </tr>
+          <tr>
+            <td>op_label</td>
+            <td>Specifies the name of each option.</td>
+          </tr>
+        </table>
+        <br>
+        <a name="customfile" class="title nodec">#CUSTOMFILE</a>
+        <br>
+        <span>Similar to #CUSTOMOPTION, but this defines the sprites that can be added, replaced or removed according
+          to the player's needs.</span>
+        <br>
+        <span>This shares the same stability limit of 21 of such definitions with #CUSTOMOPTION.</span>
+        <br>
+        <img src="./img/customfile.png" alt="">
+        <br>
+        <table>
+          <tr>
+            <th>Definition</th>
+            <th>Description</th>
+          </tr>
+          <tr>
+            <td>title</td>
+            <td>Specifies the asset name. It should also be short and easy to understand.</td>
+          </tr>
+          <tr>
+            <td>path</td>
+            <td>Specifies the path the the forementioned asset's folder. It should be a relative path starting from
+              LR2files\Theme pointing to your skin.
+              <br> <br>
+              The wildcard * is used here to assign all the file with matching extensions (such as .png) into the
+              asset's settings.
+              <br>
+              Note that you cannot mix and match different file types, choose one or the other.
+            </td>
+          </tr>
+          <tr>
+            <td>default</td>
+            <td>Specifies the default option of the asset. This is also the option when the skin is freshly extracted
+              to the client.</td>
+          </tr>
+        </table>
+        <br>
+        <a name="eoh" class="title nodec">#ENDOFHEADER</a>
+        <br>
+        <span>Spaghetti code. No one really knows why it's there or what is its purpose, but somethings might break
+          without it.</span>
+      </div>
+
+      <br><br>
+      <div class="section1">
+        <a name="branch" class="title nodec">Branching-related</a>
+        <br>
+        <span>
+          Conditional branching. This can be extremely useful to fit the sprites in different situations, but it also
+          equally makes that many different veins pop out when trying to figure out the right combination.
+        </span>
+        <br> <br>
+        <a name="if" class="title nodec">#IF / #ELSEIF / #ELSE / #ENDIF</a>
+        <br>
+        <span>If you know some basic coding then you already know what each does:
+          <br><br>#IF specifies a DST argument to be checked,
+          <br> and if it fails then it checks the #ELSEIF DST argument,
+          <br> and then returns the #ELSE sprite display if none are met.
+          <br> #ENDIF to close the #IF function.
+        </span>
+        <br><br>
+        You can create an AND function by chaining two or more DST options, one after the other and the sprite will only
+        be displayed when all of the DST conditions are met.
+        <br> Do note that the conditional branching is only checked once on skin load, and if the conditions are not
+        met, the rendering is skipped completely.
+        <br><br> Exercise extra caution when this is used for #IMAGE definitions, as its <span class="def">gr</span>
+        value may shift, causing unintended behaviors.
+        <br> Incorrectly defined #ELSE functions can cause multiple definitions to be used instead of just one.
+        <br><br> Unlike the DST op1-3 branching, you cannot use ! or - in front of the option to create a NOT argument.
+        <br><br>Example: <br>
+        <img src="./img/if1.png" alt="" style="width: 75%;">
+        <br> <img src="./img/if2.png" alt="" style="width: 75%;">
+        <br> <img src="./img/if3.png" alt="">
+        <br>
+        <h4>Extra: DSTop conditional branching</h4>
+        <br> <img src="./img/dstop.png" alt="">
+        <br> <span>You can use up to 3 DST options slots for branching. NOT function by using ! or - is allowed.</span>
+        <br> <span>This also allows the sprite to be loaded on demand when the requirement is met.</span>
+        <br> <span>Note that this is not the same as #IF, as it is checked every frame and not just on skin load, and
+          #IF condition will take priority if both are defined.</span>
+        <br> <br>
+        <a name="include" class="title nodec">#INCLUDE</a>
+        <br>
+        <span>Used to include other .csv files into the current one. This is useful for option branching, as you can
+          define different options in different files and include them in the main .csv file.</span>
+        <br>
+        <img src="./img/include.png" alt="">
+        <br>
+        <span>NOTE: DO NOT include the same file multiple times, as it will cause the client to
+          crash, or worse, even cause a memory leak (not confirmed, but i'm not stupid enough to try it)</span>
+        <br><br>
+        <a name="setoption" class="title nodec">#SETOPTION</a>
+        <br>
+        <span>Used to set the DST option to a specific value. This is useful for setting the default DST option to a
+          specific
+          value when the skin is first loaded.</span>
+        <br>
+        <img src="./img/setop.png" alt="">
+        <br>
+        <table>
+          <tr>
+            <th>Definition</th>
+            <th>Description</th>
+          </tr>
+          <tr>
+            <td>dst_op</td>
+            <td>Specifies the DST option to be set.</td>
+          </tr>
+          <tr>
+            <td>switch</td>
+            <td>Specifies whether it is 0 for Off or 1 for On.</td>
+        </table>
+      </div>
+    </div>
+  </div>
+</body>
+
+</html>

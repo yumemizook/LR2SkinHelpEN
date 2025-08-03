@@ -1,23 +1,26 @@
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>LR2 Skin Help (English Version)</title>
     <link rel="stylesheet" href="main.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Mochiy+Pop+One&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Mochiy+Pop+One&display=swap" rel="stylesheet">
 </head>
+
 <body>
     <div class="nav">
         <div class="left">
-        <nav><a href="index.html" class="">Home</a></nav>
-        <nav><a href="skinbasics.html" class="">Basics of a skin</a></nav>
-        <nav><a href="definitions.html" class="">Definitions</a></nav>
-        <nav><a href="definitionsa.html" class="">Advanced Definitions</a></nav>
-        <nav><a href="dstop.html" class="">Numbers</a></nav>
-        <nav><a href="misc.html" class="">Misc</a></nav>
-        <nav><a href="misc2.html" class="">Problemdump</a></nav>
+            <nav><a href="index.html" class="">Home</a></nav>
+            <nav><a href="skinbasics.html" class="">Basics of a skin</a></nav>
+            <nav><a href="definitions.html" class="">Definitions</a></nav>
+            <nav><a href="definitionsa.html" class="">Advanced Definitions</a></nav>
+            <nav><a href="definitionsp.html" class="">Play Definitions</a></nav>
+            <nav><a href="dstop.html" class="">Numbers</a></nav>
+            <nav><a href="misc.html" class="">Misc</a></nav>
+            <nav><a href="misc2.html" class="">Problemdump</a></nav>
         </div>
         <div class="right">
             LR2 Skin Help (EN)
@@ -26,33 +29,40 @@
     <div class="bo">
         <div class="section0">
             <h2>Basics of a LR2 skin</h2>
-                <span>A skin contains three key files: A definition file (.lr2skin), a configuration file (.csv), and image/audio files (.png or .jpg for image, .mpg for video).</span> <br>
-                <span>The .lr2skin and .csv files are actually plain text files, and thus can be opened and edited in any text processing software (or just Notepad)</span>
-                <br><br>
-                Like this: <br>
-                <img src="./lr2skinopen.png" alt="" style="width: 50%; height: auto;">
+            <span>A skin contains three key files: A definition file (.lr2skin), a configuration file (.csv), and
+                image/audio files (.png or .jpg for image, .mpg for video).</span> <br>
+            <span>The .lr2skin and .csv files are actually plain text files, and thus can be opened and edited in any
+                text processing software (or just Notepad)</span>
+            <br><br>
+            Like this: <br>
+            <img src="./lr2skinopen.png" alt="" style="width: 50%; height: auto;">
 
-                <br><br>
-                <span>As for the external image/video or .csv file reference:
-                    <br><span class="def">#IMAGE</span> for images/videos
-                    <br><span class="def">#INCLUDE</span> for .csv files
-                    <br><span class="def">#LR2FONT</span> for bitmap font files (we will get to that later in this guide)
-                </span>
+            <br><br>
+            <span>As for the external image/video or .csv file reference:
+                <br><span class="def">#IMAGE</span> for images/videos
+                <br><span class="def">#INCLUDE</span> for .csv files
+                <br><span class="def">#LR2FONT</span> for bitmap font files (we will get to that later in this guide)
+            </span>
         </div>
         <div class="section1">
             <h2 class="title">.lr2skin file</h2>
             <span>The heart of an LR2 skin.</span>
             <br>
-            <span>This file is checked and loaded on startup, so if any changes are made to the file while LR2 is running, the changes won't be registered.</span>
+            <span>This file is checked and loaded on startup, so if any changes are made to the file while LR2 is
+                running, the changes won't be registered.</span>
             <br><br>
-            <span>The skin contains vital information about the skin such as its name and creator, where it is used and its references.</span>
+            <span>The skin contains vital information about the skin such as its name and creator, where it is used and
+                its references.</span>
             <br><br>
             <span>It is also technically a CSV file at heart, and can also be edited in spreadsheet processors.</span>
             <br>
-            <span>Usually Excel is the most convenient application for CSV editing since it automatically converts the comma-delimited syntax to tab-delimited on launch.</span><br>
-            <span style="font-style: italic;">If it doesn't, go into locale settings and check if digit grouping symbol is a comma.</span>
+            <span>Usually Excel is the most convenient application for CSV editing since it automatically converts the
+                comma-delimited syntax to tab-delimited on launch.</span><br>
+            <span style="font-style: italic;">If it doesn't, go into locale settings and check if digit grouping symbol
+                is a comma.</span>
             <br><br>
-            <span>The original site covers some of alternatives to Excel, but other than LibreOffice Calc, I'm not sure if the rest of the ones mentioned are still up and downloadable.</span>
+            <span>The original site covers some of alternatives to Excel, but other than LibreOffice Calc, I'm not sure
+                if the rest of the ones mentioned are still up and downloadable.</span>
             <br>
             <span>Here is a list of some modern-day alternatives:</span>
             <ul>
@@ -64,60 +74,91 @@
             <span>...or just use Notepad</span>
         </div>
         <div class="section2">
-<h2 class="title">
-    .csv file
-</h2>
-<span>The .csv file is a configuration file that contains the skin's settings and references to the definitions used in the skin.</span>
-<br>
-<span>It is used to define the layout and behavior of the skin, such as the position and size of elements, as well as their visibility and functionality.</span>
-<br><br>
-<span>While it is used in almost every skin, it is <span class="imp">NOT</span> mandatory.</span>
-<br>
-<span>If you're a maniac you can just implement all the definitions in one .lr2skin file if you want</span>
-<br><br>
-<span>The convenience of using .csv files is that you can change the definitions in it on-the-fly, without the need to restart LR2.</span>
-<br>
-<span>It is also useful for option branching (one file is used for one definition and others for other definitions).</span>
+            <h2 class="title">
+                .csv file
+            </h2>
+            <span>The .csv file is a configuration file that contains the skin's settings and references to the
+                definitions used in the skin.</span>
+            <br>
+            <span>It is used to define the layout and behavior of the skin, such as the position and size of elements,
+                as well as their visibility and functionality.</span>
+            <br><br>
+            <span>While it is used in almost every skin, it is <span class="imp">NOT</span> mandatory.</span>
+            <br>
+            <span>If you're a maniac you can just implement all the definitions in one .lr2skin file if you want</span>
+            <br><br>
+            <span>The convenience of using .csv files is that you can change the definitions in it on-the-fly, without
+                the need to restart LR2.</span>
+            <br>
+            <span>It is also useful for option branching (one file is used for one definition and others for other
+                definitions).</span>
         </div>
         <div class="section3">
-<h2 class="title">
-    Image files
-</h2>
-<span>Image files are used to display graphics in the skin, such as backgrounds, buttons, and other visual elements.</span>
-<br><br>
-<span>LR2/LVF supports most common image formats such as .bmp, .png or .jpg, and less commonly known ones such as .tga or .dds (while less tools support these filetypes, but I guess it's better than .png in-game???)</span>
-<br><br>
-<span>For editing these files, anything that has support for alpha channels is <span class="imp">HIGHLY</span> recommended.</span>
-<br>
-<span>For example, <span class="def">GIMP, Photoshop, Paint.NET</span>, or even online editors like <span class="def">Photopea.</span></span>
-<br>
-<span>In my experience, using Paint.NET is recommended because of it's versatility and simplicity compared to other editing softwares if you're just creating simple sprites.</span>
+            <h2 class="title">
+                Image files
+            </h2>
+            <span>Image files are used to display graphics in the skin, such as backgrounds, buttons, and other visual
+                elements.</span>
+            <br><br>
+            <span>LR2/LVF supports most common image formats such as .bmp, .png or .jpg, and less commonly known ones
+                such as .tga or .dds (while less tools support these filetypes, but I guess it's better than .png
+                in-game???)</span>
+            <br><br>
+            <span>For editing these files, anything that has support for alpha channels is <span
+                    class="imp">HIGHLY</span> recommended.</span>
+            <br>
+            <span>For example, <span class="def">GIMP, Photoshop, Paint.NET</span>, or even online editors like <span
+                    class="def">Photopea.</span></span>
+            <br>
+            <span>In my experience, using Paint.NET is recommended because of it's versatility and simplicity compared
+                to other editing softwares if you're just creating simple sprites.</span>
         </div>
         <div class="section4">
             <h2 class="title">
                 Video files
             </h2>
-<span>As far as I know, the applications of a video file is not a lot, except for the BGA and the select skin background.</span>
-<br><br>
-<span>LR2/LVF supports .mpg files, and it is recommended to use a video editor that can export to this format.</span>
-<br><br>
-<span>Keep in mind that you cannot set the starting coordinates, nor the partial width and height of the file, nor its transparency.</span>
-    </div>
+            <span>As far as I know, the applications of a video file is not a lot, except for the BGA and the select
+                skin background.</span>
+            <br><br>
+            <span>LR2/LVF supports .mpg files, and it is recommended to use a video editor that can export to this
+                format.</span>
+            <br><br>
+            <span>Keep in mind that you cannot set the starting coordinates, nor the partial width and height of the
+                file, nor its transparency.</span>
+        </div>
         <div class="section5">
             <h2 class="title">
                 .lr2font files
             </h2>
-<span>LR2/LVF supports bitmap fonts, which are used to display text in the skin.</span>
-<br>
-<span>Each font spritesheet has one .lr2font file, which points where the characters should be as well as it's width, height, and spacing.</span>
-<br><br>
-<span>I recommend using MAFU (as a replacement for hard-to-use built-in FontUtil). If anyone can find the download link to it please @ me.</span>
-<div class="section5.5">
-<h2 class="title">DXA encoding</h2>
-<span>It is possible to use DXA encoding to compress files and save storage.
-<br>
-<span>As far as I know, there isn't a more convenient tool to encode/decode such files, other than its built-in tools.</span>
-</span>
-</div>
-    </body>
-    </html>
+            <span>LR2/LVF supports bitmap fonts, which are used to display text in the skin.</span>
+            <br>
+            <span>Each font spritesheet has one .lr2font file, which points where the characters should be as well as
+                it's width, height, and spacing.</span>
+            <br><br>
+            <span>I recommend using <a href="https://mistyblue.info/tools.html#mafu">MAFU</a> (as a replacement for
+                hard-to-use built-in FontUtil). <span style="text-decoration: line-through;">If anyone can find the
+                    download link to it please @ me.</span> <span style="font-style: italic;">Thanks @moodreceptor on
+                    Discord for the link!</span></span>
+            <div class="section5.5">
+                <h2 class="title">DXA encoding</h2>
+                <span>It is possible to use DXA encoding to compress files and save storage.
+                    <br>
+                    <span>As far as I know, there isn't a more convenient tool to encode/decode such files, other than
+                        its built-in tools. (DxaEncode / DxaDecode)</span>
+                    <br>
+                    <span>To encode/decode a file, use the command line tool with the following syntax since help doesnt
+                        work:</span>
+                    <br>
+                    <br>
+                    <span class="def">DxaEncode.exe [input font folder] [output dxa file]
+                        <br>
+                        <br>
+                        DxaDecode.exe [input dxa file path] [output folder]
+                    </span>
+                </span>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
