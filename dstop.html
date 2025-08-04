@@ -1,0 +1,398 @@
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>LR2 Skin Help (English Version)</title>
+  <link rel="stylesheet" href="main.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Mochiy+Pop+One&display=swap" rel="stylesheet" />
+  <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+  <style>
+    table,
+    th,
+    td {
+      border: none;
+      font-size: small;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="nav">
+    <div class="left">
+      <nav><a href="index.html" class="">Home</a></nav>
+      <nav><a href="skinbasics.html" class="">Basics of a skin</a></nav>
+      <nav><a href="definitions.html" class="">Definitions</a></nav>
+      <nav><a href="definitionsa.html" class="">Advanced Definitions</a></nav>
+      <nav><a href="definitionsp.html" class="">Play Definitions</a></nav>
+      <nav><a href="dstop.html" class="">Numbers</a></nav>
+      <nav><a href="misc.html" class="">Misc</a></nav>
+      <nav><a href="misc2.html" class="">Problemdump</a></nav>
+    </div>
+    <div class="right">LR2 Skin Help (EN)</div>
+  </div>
+  <div class="body">
+    <div class="tableocontents">
+      <button class="dstoption">dst_option</button>
+      <button class="timer">timer</button>
+      <button class="num">num</button>
+      <button class="button">button_type</button>
+      <button class="bargraph">bargraph_type</button>
+      <button class="slider">slider_type</button>
+      <button class="text">text_st</button>
+      <button class="special">Special</button>
+      <div class="legend">
+        Legend:
+        <ul>
+          <li>All clients</li>
+          <li class="steps">LR2 with Fast/Slow</li>
+          <li class="def">Lunatic Vibes/ LVF</li>
+          <li class="imp">Lunatic Vibes F only</li>
+        </ul>
+      </div>
+    </div>
+    <div class="content">
+      <div class="section0">
+        <h2>DST op values</h2>
+        <table>
+          <tr>
+            <td>0</td>
+            <td>Always true</td>
+          </tr>
+          <tr>
+            <td>1</td>
+            <td>Bar focused is a folder</td>
+          </tr>
+          <tr>
+            <td>2</td>
+            <td>Bar focused is a song</td>
+          </tr>
+          <tr>
+            <td>3</td>
+            <td>Bar focused is a course</td>
+          </tr>
+          <tr>
+            <td>4</td>
+            <td>Bar focused is a new course</td>
+          </tr>
+          <tr>
+            <td>5</td>
+            <td>Bar focused is playable</td>
+          </tr>
+          <tr>
+            <td colspan="2"><br></td>
+          </tr>
+          <tr>
+            <td>10</td>
+            <td>Current mode is Double or Double Battle</td>
+          </tr>
+          <tr>
+            <td>11</td>
+            <td>Current mode is Battle</td>
+          </tr>
+          <tr>
+            <td>12</td>
+            <td>Current mode is Double or Battle or Double Battle</td>
+          </tr>
+          <tr>
+            <td>13</td>
+            <td>Current mode is Ghost Battle or Battle</td>
+          </tr>
+          <tr>
+            <td colspan="2"><br></td>
+          </tr>
+          <tr>
+            <td>20</td>
+            <td>All panels off</td>
+          </tr>
+          <tr>
+            <td>21</td>
+            <td>Panel 1 on</td>
+          </tr>
+          <tr>
+            <td>22</td>
+            <td>Panel 2 on</td>
+          </tr>
+          <tr>
+            <td>23</td>
+            <td>Panel 3 on</td>
+          </tr>
+          <tr>
+            <td>24</td>
+            <td>Panel 4 on</td>
+          </tr>
+          <tr>
+            <td>25</td>
+            <td>Panel 5 on</td>
+          </tr>
+          <tr>
+            <td>26</td>
+            <td>Panel 6 on</td>
+          </tr>
+          <tr>
+            <td>27</td>
+            <td>Panel 7 on</td>
+          </tr>
+          <tr>
+            <td>28</td>
+            <td>Panel 8 on</td>
+          </tr>
+          <tr>
+            <td>29</td>
+            <td>Panel 9 on</td>
+          </tr>
+          <tr>
+            <td colspan="2"><br></td>
+          </tr>
+          <tr>
+            <td>30</td>
+            <td>BGA Normal</td>
+          </tr>
+          <tr>
+            <td>31</td>
+            <td>BGA extend</td>
+          </tr>
+          <tr>
+            <td>32</td>
+            <td>Autoplay off</td>
+          </tr>
+          <tr>
+            <td>33</td>
+            <td>Auoplay on</td>
+          </tr>
+          <tr>
+            <td>34</td>
+            <td>Ghost off</td>
+          </tr>
+          <tr>
+            <td>35</td>
+            <td>Ghost Type A <span class="steps">(technically used for Fast/Slow)</span></td>
+          </tr>
+          <tr>
+            <td>36</td>
+            <td>Ghost Type B</td>
+          </tr>
+          <tr>
+            <td>37</td>
+            <td>Ghost Type C</td>
+          </tr>
+          <tr>
+            <td>38</td>
+            <td>Score Graph off</td>
+          </tr>
+          <tr>
+            <td>39</td>
+            <td>Score Graph on</td>
+          </tr>
+          <tr>
+            <td>40</td>
+            <td>BGA off</td>
+          </tr>
+          <tr>
+            <td>41</td>
+            <td>BGA on</td>
+          </tr>
+          <tr>
+            <td colspan="2"><br></td>
+          </tr>
+          <tr>
+            <td>42</td>
+            <td>1P Hard Off (normal gauge)</td>
+          </tr>
+          <tr>
+            <td>43</td>
+            <td>1P Hard On (hard gauge)</td>
+          </tr>
+          <tr>
+            <td>44</td>
+            <td>2P Hard Off (normal gauge)</td>
+          </tr>
+          <tr>
+            <td>45</td>
+            <td>2P Hard On (hard gauge)</td>
+          </tr>
+          <tr>
+            <td colspan="2"><br></td>
+          </tr>
+          <tr>
+            <td>46</td>
+            <td>Difficulty filter on</td>
+          </tr>
+          <tr>
+            <td>47</td>
+            <td>Difficulty filter off</td>
+          </tr>
+          <tr>
+            <td colspan="2"><br></td>
+          </tr>
+          <tr class="def">
+            <td>48</td>
+            <td>1P EX-HARD</td>
+          </tr>
+          <tr class="def">
+            <td>49</td>
+            <td>2P EX-HARD</td>
+          </tr>
+          <tr>
+            <td colspan="2"><br></td>
+          </tr>
+          <tr>
+            <td>50</td>
+            <td>LR2IR offline</td>
+          </tr>
+          <tr>
+            <td>51</td>
+            <td>LR2IR online</td>
+          </tr>
+          <tr>
+            <td colspan="2"><br></td>
+          </tr>
+          <tr>
+            <td>52</td>
+            <td>Extra Mode off</td>
+          </tr>
+          <tr>
+            <td>53</td>
+            <td>Extra Mode on</td>
+          </tr>
+          <tr>
+            <td colspan="2"><br></td>
+          </tr>
+          <tr>
+            <td>54</td>
+            <td>1P Auto-scratch off</td>
+          </tr>
+          <tr>
+            <td>55</td>
+            <td>1P Auto-scratch on</td>
+          </tr>
+          <tr>
+            <td>56</td>
+            <td>2P Auto-scratch off</td>
+          </tr>
+          <tr>
+            <td>57</td>
+            <td>2P Auto-scratch on</td>
+          </tr>
+          <tr>
+            <td colspan="2"><br></td>
+          </tr>
+          <tr>
+            <td>60</td>
+            <td>Score saving not allowed</td>
+          </tr>
+          <tr>
+            <td>61</td>
+            <td>Score saving allowed</td>
+          </tr>
+          <tr>
+            <td>62</td>
+            <td>Saves as failed or no play (Clear saving not allowed)</td>
+          </tr>
+          <tr>
+            <td>63</td>
+            <td>Selected Assist Easy/Easy gauge (saves as Easy)</td>
+          </tr>
+          <tr>
+            <td>64</td>
+            <td>Selected Normal gauge (saves as Clear)</td>
+          </tr>
+          <tr>
+            <td>65</td>
+            <td>Selected Hard/Ex-Hard/G-ATK gauge (saves as Hard Clear)</td>
+          </tr>
+          <tr>
+            <td>66</td>
+            <td>Selected Death/P-ATK gauge (saves as Full Combo)</td>
+          </tr>
+          <tr>
+            <td colspan="2"><br></td>
+          </tr>
+          <tr>
+            <td colspan="2">Max level value: Lv.9 for 5/10 Keys, Lv.12 for 7/14 Keys, Lv.42 for 9 Keys</td>
+          </tr>
+          <tr>
+            <td>70</td>
+            <td>The level of the beginner chart in the same folder doesn't exceed the max value</td>
+          </tr>
+          <tr>
+            <td>71</td>
+            <td>Normal</td>
+          </tr>
+          <tr>
+            <td>72</td>
+            <td>Hyper</td>
+          </tr>
+          <tr>
+            <td>73</td>
+            <td>Another</td>
+          </tr>
+          <tr>
+            <td>74</td>
+            <td>Insane</td>
+          </tr>
+        </table>
+      </div>
+    </div>
+  </div>
+  <script>
+    const dstButton = document.querySelector('.dstoption');
+    const timerButton = document.querySelector('.timer');
+    const numButton = document.querySelector('.num');
+    const buttonButton = document.querySelector('.button');
+    const bargraphButton = document.querySelector('.bargraph');
+    const sliderButton = document.querySelector('.slider');
+    const textButton = document.querySelector('.text');
+    const specialButton = document.querySelector('.special');
+
+    function showSection(index) {
+      for (let i = 0; i <= 7; i++) {
+        const section = document.querySelector('.section' + i);
+        if (section) {
+          if (i === index) {
+            section.classList.remove('hide');
+          } else {
+            section.classList.add('hide');
+          }
+        }
+      }
+    }
+
+    dstButton.addEventListener('click', () => {
+      showSection(0);
+    });
+
+    timerButton.addEventListener('click', () => {
+      showSection(1);
+    });
+
+    numButton.addEventListener('click', () => {
+      showSection(2);
+    });
+
+    buttonButton.addEventListener('click', () => {
+      showSection(3);
+    });
+
+    bargraphButton.addEventListener('click', () => {
+      showSection(4);
+    });
+
+    sliderButton.addEventListener('click', () => {
+      showSection(5);
+    });
+
+    textButton.addEventListener('click', () => {
+      showSection(6);
+    });
+
+    specialButton.addEventListener('click', () => {
+      showSection(7);
+    });
+  </script>
+</body>
+
+
+</html>

@@ -73,6 +73,8 @@ a {
 
 .tableocontents {
   background-color: rgb(13, 13, 13);
+  display: flex;
+  flex-direction: column;
   padding: 10px;
   margin: 10px;
   border-radius: 4px;
@@ -118,6 +120,18 @@ table {
 ul li a{
   text-decoration: none;
 }
+
 .hide{
   display: none;
+}
+
+.tableocontents button {
+  margin: 2px 0;
+  background-color: #2cceff;
+  width: 150px;
+  color: #fff;
+  border: none;
+  padding: 5px;
+  cursor: pointer;
+  font-family: 'Mochiy Pop One', sans-serif;
 }
