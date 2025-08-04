@@ -11,6 +11,11 @@
       rel="stylesheet"
     />
     <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+    <style>
+      img {
+        width: 75%;
+      }
+    </style>
   </head>
 
   <body>
@@ -83,7 +88,7 @@
       <div class="content">
         <div class="section0">
           <h2>
-            P <a name="play" class="title nodec">Play Skin definitions</a>
+            <a name="play" class="title nodec">Play Skin definitions</a>
           </h2>
           <span
             >In vanilla LR2, you can set the play skin options by holding down
@@ -268,6 +273,66 @@
               </td>
             </tr>
           </table>
+          <br />
+          <span
+            >It's worth noting that you can also define this using #DST_IMAGE
+            paired with op241-246 (261-266 for 2P) along with timer46 (47 for
+            2P) to achieve similar effects.</span
+          >
+          <br />
+          <br />
+          <a name="srcnowcombo" class="title nodec">#SRC_NOWCOMBO</a>
+          <br />
+          <span
+            >Dedicated combo display definition. Use #SRC_NOWCOMBO_1P for 1P,
+            #SRC_NOWCOMBO_2P for 2P. <br /><br />
+            <span style="font-style: italic">Technically,</span> you can use the
+            same index values as #SRC_NOWJUDGE, but anything lower than 3 is
+            useless since they are combo breakers. <br /><br />
+            The xy in #DST_NOWCOMBO is relative to #DST_NOWJUDGE definition.
+          </span>
+          <br />
+          <img src="./img/srcnowcombo.png" alt="" />
+          <table>
+            <tr>
+              <th>Definition</th>
+              <th>Description</th>
+            </tr>
+            <tr>
+              <td>index (NULL)</td>
+              <td>
+                Specifies the judgement:
+                <ul>
+                  <li>3: GOOD</li>
+                  <li>4: GREAT</li>
+                  <li>5: PGREAT</li>
+                </ul>
+              </td>
+            </tr>
+            <tr>
+              <td>align</td>
+              <td>
+                This is slightly different than the NUMBER definition:
+                <ul>
+                  <li>0: Left aligned</li>
+                  <li>1: Center aligned</li>
+                  <li>2: Right aligned</li>
+                </ul>
+              </td>
+            </tr>
+            <tr>
+              <td>keta</td>
+              <td>
+                Same as in #SRC_NUMBER. For 99% of the charts, 4 is enough, and
+                for 99,99999999% of charts, 5 is enough. You can use 6 to
+                correctly display the combo on 100% of the charts.
+              </td>
+            </tr>
+          </table>
+          <br /><br />
+          <a name="srcgroovegauge" class="title nodec">#SRC_GROOVEGAUGE</a>
+          <br />
+          <span>The definition of the LR2 groove gauge. Note that the wh values represent one bar (2%), creating 50 for 100%.</span>
         </div>
       </div>
     </div>
