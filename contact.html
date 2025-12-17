@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Contact - LR2 Skin Help (EN)</title>
+    <link rel="stylesheet" href="main.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Mochiy+Pop+One&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+    <script
+      src="https://kit.fontawesome.com/ced4c4a7f8.js"
+      crossorigin="anonymous"
+    ></script>
+    <style>
+      .copied {
+        display: none;
+        color: rgb(3, 255, 3);
+        margin-top: 10px;
+      }
+      .buttons {
+        display: flex;
+        justify-content: space-between;
+        gap: 10px;
+        padding: 15px;
+        font-size: x-large;
+      }
+
+      .buttons a {
+        text-decoration: none;
+        padding: 10px;
+        background-color: rgba(0, 0, 0, 0.315);
+        border-radius: 5px;
+      }
+
+        .buttons a:hover {
+            background-color: rgba(255, 255, 255, 0.315);
+        }
+
+        .issues {
+            margin-top: 20px;
+            border-top: 1px solid gray;
+            padding-top: 10px;
+        }
+
+        .issue{
+            border-radius: 4px;
+            border: 1px solid gray;
+            background-color: rgba(168, 252, 255, 0.137);
+            padding: 10px;
+        }
+
+        .info{
+            color: gray
+        }
+    </style>
+  </head>
+
+  <body>
+    <div id="nav-placeholder"></div>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+      $(function () {
+        $("#nav-placeholder").load("nav.html .nav");
+      });
+    </script>
+
+    <div class="bo">
+      <h2>Contact me</h2>
+      <p>
+        Yes, I know quite a lot of stuff from the original guide is missing. I
+        do not plan to cover each and every specific problem mentioned in the
+        formentioned original guide, but rather adding what is needed by me and
+        other users.
+      </p>
+      <p>
+        If you need something covered, contact me on these platforms and I will
+        add it to the page ASAP:
+      </p>
+      <div class="buttons">
+        <a href="https://www.facebook.com/queenofheartbms/" class="fb"
+          ><i class="fa-brands fa-facebook-f"></i> Facebook</a
+        >
+        <a href="#" class="discordid"
+          ><i class="fa-brands fa-discord"></i>Copy Discord ID</a
+        >
+        <a
+          href="https://github.com/yumemizook/LR2SkinHelpEN/issues/new"
+          class="github"
+          ><i class="fa-brands fa-github-alt"></i>Create a new issue on
+          GitHub...</a
+        >
+      </div>
+      <div class="copied">Discord ID copied to clipboard.</div>
+    </div>
+    <div class="issues">
+      <div class="addissue"></div>
+      <br>
+      <div class="issuedisplay"></div>
+    </div>
+  </body>
+  <script>
+    const discordIdButton = document.querySelector(".discordid");
+    discordIdButton.addEventListener("click", () => {
+      const discordId = "sugarlesscat.";
+      navigator.clipboard
+        .writeText(discordId)
+        .then(() => {
+          const copiedMessage = document.querySelector(".copied");
+          copiedMessage.style.display = "block";
+          setTimeout(() => {
+            copiedMessage.style.display = "none";
+          }, 12000);
+        })
+        .catch((err) => {
+          console.error("Failed to copy Discord ID: ", err);
+        });
+    });
+  </script>
+  <script>
+    const issuesAPI =
+      "https://api.github.com/repos/yumemizook/LR2SkinHelpEN/issues";
+    const issueDisplay = document.querySelector(".issuedisplay");
+    document.addEventListener("DOMContentLoaded", () => {
+      const githubLink = document.querySelector(".addissue");
+      fetch(issuesAPI)
+        .then((response) => {
+          if (!response.ok) {
+            throw new Error("Network response was not ok");
+          }
+          return response.json();
+        })
+        .then((data) => {
+          const openIssues = data.filter((issue) => !issue.pull_request).length;
+          githubLink.textContent = `${openIssues} open issues`;
+
+          if (data.length === 0) {
+            issueDisplay.innerHTML += `
+              <span>No issues found.</span>
+            `;
+          } else {
+            data.forEach((issue) => {
+                const timeDifference = Date.now() - new Date(issue.created_at).getTime();
+                const daysDifference = Math.floor(timeDifference / (1000 * 60 * 60 * 24));
+                const colorsat = Math.min(100, (daysDifference / 30 * 100));
+              issueDisplay.innerHTML += `
+                <div class="issue">
+                    <a href="${issue.html_url}" target="_blank" style="text-decoration: none; color: hsl(200, ${100 - colorsat}%, 75%)">
+                        <h3>#${issue.number.toString().padStart(3, '0')}: ${issue.title}</h3>
+                    </a>
+                    <span class="info">Opened by ${issue.user.login} on ${new Date(
+                issue.created_at
+              ).toLocaleDateString()}</span>
+                    <p>${issue.body.substring(0, 200)}${
+                issue.body.length > 200 ? "..." : ""
+              }</p>
+                </div>
+                <br>
+              `;
+            });
+          }
+        })
+        .catch((error) => {
+          console.error("There was a problem with the fetch operation:", error);
+        });
+    });
+  </script>
+</html>

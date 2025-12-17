@@ -14,22 +14,34 @@
   </head>
 
   <body>
-    <div class="nav">
-      <div class="left">
-        <nav><a href="index.html" class="">Home</a></nav>
-        <nav><a href="skinbasics.html" class="">Basics of a skin</a></nav>
-        <nav><a href="definitions.html" class="">Definitions</a></nav>
-        <nav><a href="definitionsa.html" class="">Advanced Definitions</a></nav>
-        <nav><a href="definitionsp.html" class="">Play Definitions</a></nav>
-        <nav><a href="dstop.html" class="">Numbers</a></nav>
-        <nav><a href="misc.html" class="">Misc</a></nav>
-        <nav><a href="misc2.html" class="">Problemdump</a></nav>
-      </div>
-      <div class="right">LR2 Skin Help (EN)</div>
-    </div>
+    <div id="nav-placeholder"></div>
     <div class="bo">
-      <h2>Nothing here yet!</h2>
-      <span>This page is being updated, please check back later...</span>
+      <a class="title nodec">FAST/SLOW implementation in detail</a><br />
+      <span
+        >While I have covered the DST and num definition in the dst options
+        page, it's better to explain how it works in detail. <br />
+        Well... No one actually knew how the first ever FAST/SLOW definition was
+        created, but over it all boils down to this #SRC_NUMBER definition:
+        <br /><img src="/img/fastslow.png"
+      /></span>
+      <br /><span
+        >Yep. The FAST/SLOW image is a #SRC_NUMBER definition, pretty confusing!
+        <br />
+        Unless you know what you are doing, DO NOT MODIFY THE xywh coordinates.
+        Instead, shape the FAST/SLOW image sprites accordingly.
+        <br /><br />It should look something like this (feel free to save!)
+        <br />
+        <img src="/img/fs.png"
+      /> <br>
+      And add its DST definitions correctly: <br><img src="/img/dstfs.png"><br>
+      <br>Remember the corresponding DST op and num definitions!
+    </span>
     </div>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+      $(function () {
+        $("#nav-placeholder").load("nav.html .nav");
+      });
+    </script>
   </body>
 </html>

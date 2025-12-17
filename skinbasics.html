@@ -12,21 +12,7 @@
 </head>
 
 <body>
-    <div class="nav">
-        <div class="left">
-            <nav><a href="index.html" class="">Home</a></nav>
-            <nav><a href="skinbasics.html" class="">Basics of a skin</a></nav>
-            <nav><a href="definitions.html" class="">Definitions</a></nav>
-            <nav><a href="definitionsa.html" class="">Advanced Definitions</a></nav>
-            <nav><a href="definitionsp.html" class="">Play Definitions</a></nav>
-            <nav><a href="dstop.html" class="">Numbers</a></nav>
-            <nav><a href="misc.html" class="">Misc</a></nav>
-            <nav><a href="misc2.html" class="">Problemdump</a></nav>
-        </div>
-        <div class="right">
-            LR2 Skin Help (EN)
-        </div>
-    </div>
+    <div id="nav-placeholder"></div>
     <div class="bo">
         <div class="section0">
             <h2>Basics of a LR2 skin</h2>
@@ -159,7 +145,13 @@
                 </span>
             </div>
         </div>
-    </div>
+        </div>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        $(function(){
+            $("#nav-placeholder").load("nav.html .nav");
+        });
+    </script>
 </body>
 
 </html>

@@ -14,19 +14,7 @@
   </head>
 
   <body>
-    <div class="nav">
-      <div class="left">
-        <nav><a href="index.html" class="">Home</a></nav>
-        <nav><a href="skinbasics.html" class="">Basics of a skin</a></nav>
-        <nav><a href="definitions.html" class="">Definitions</a></nav>
-        <nav><a href="definitionsa.html" class="">Advanced Definitions</a></nav>
-        <nav><a href="definitionsp.html" class="">Play Definitions</a></nav>
-        <nav><a href="dstop.html" class="">Numbers</a></nav>
-        <nav><a href="misc.html" class="">Misc</a></nav>
-        <nav><a href="misc2.html" class="">Problemdump</a></nav>
-      </div>
-      <div class="right">LR2 Skin Help (EN)</div>
-    </div>
+    <div id="nav-placeholder"></div>
     <div class="bo">
       <h1>LR2 / Lunatic Vibes (F) Skin help</h1>
       <a
@@ -63,7 +51,7 @@
     <br />
     <br />
     <div class="stats" style="display: flex; justify-content: space-between">
-      <span> Created by <a href="https://github.com/yumemizook">3173</a></span>
+      <span> Created by <a href="https://github.com/yumemizook">Icycle</a></span>
       <span class="updatedate"> Last updated:</span>
     </div>
     <div class="footerlink"></div>
@@ -72,6 +60,12 @@
 <div class="elfsight-app-d7aae801-ebe1-42d6-9196-fae30aca556e" data-elfsight-app-lazy></div>
   </div>
 <script src="https://static.elfsight.com/platform/platform.js" async></script>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script>
+    $(function() {
+      $("#nav-placeholder").load("nav.html .nav");
+    });
+  </script>
   <script>
     const updateTime = document.querySelector(".updatedate");
 
