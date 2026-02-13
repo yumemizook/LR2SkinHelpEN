@@ -8,12 +8,12 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Mochiy+Pop+One&display=swap" rel="stylesheet" />
-      <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+  <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
 </head>
 
-  <body>
-    <div id="nav-placeholder"></div>
-    <div class="body">
+<body>
+  <div id="nav-placeholder"></div>
+  <div class="body">
     <div class="tableocontents">
       <h4>Table of Contents</h4>
       <ul>
@@ -815,9 +815,9 @@
         <tr>
           <td>panel</td>
           <td>
-            Specifies which panel will the button open. <br />
+            Specifies which panel displays the button. <br />
             Possible values ranges from 1 to 9, or -1 for when all panels are
-            off.
+            off and 0 if the button is visible everywhere.
           </td>
         </tr>
         <tr>
@@ -965,7 +965,7 @@
   </div>
   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
   <script>
-    $(function() {
+    $(function () {
       $("#nav-placeholder").load("nav.html .nav");
     });
   </script>
